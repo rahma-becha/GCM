@@ -1,0 +1,101 @@
+{
+    "patients": [
+      {
+        "id": 1,
+        "nom": "Dupont",
+        "prenom": "Jean",
+        "dateNaissance": "1980-01-15",
+        "genre": "Homme",
+        "adresse": "123 Rue de la Santé",
+        "telephone": "0123456789",
+         "CNAM": true,
+        "NumCnam":12358
+      },
+      {
+        "id": 2,
+        "nom": "Martin",
+        "prenom": "Marie",
+        "dateNaissance": "1995-05-20",
+        "genre": "Femme",
+        "adresse": "456 Avenue Médicale",
+        "telephone": "0987654321",
+        "CNAM": false
+        
+  
+      }
+    ],
+    "medecin": [
+      {
+        "id": 1,
+        "nom": "Dr. Dubois",
+        "specialite": "Cardiologue",
+        "telephone": "0123456789",
+        "email":"Dubois@gmail.com",
+        "password":"Dubois123",
+        "role":"medcin"
+      }],
+      "secraitaire":[
+      {
+        "id": 1,
+        "nom": "secretaire",
+        "specialite": "Cardiologue",
+        "telephone": "0123456789",
+        "email":"Dubois@gmail.com",
+        "password":"Dubois123",
+        "role":"secretaire"
+      }
+      
+    ],
+    "rendezvous": [
+      {
+        "id": 1,
+        "patientId": 1,
+        "medecinId": 1,
+        "date": "2023-12-01T10:00:00",
+        "motif": "Consultation de routine",
+        "medicament": "Aspirine",
+        "analyse": null
+      },
+      {
+        "id": 2,
+        "patientId": 2,
+        "medecinId": 2,
+        "date": "2023-12-02T14:30:00",
+        "motif": "Problèmes de peau",
+        "medicament": null,
+        "analyse": "Dermatographie"
+      }
+    ],
+  "dossierMedical": [
+      {
+        "id": 1,
+        "patientId": 1,
+        "poids": 75,
+        "taille": 180,
+        "allergie": false,
+        "traitements": [
+          {
+            "date": "2023-12-01",
+            "medicament": ["Aspirine","doliprane"],
+            "analyse": null
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "patientId": 2,
+        "poids": 60,
+        "taille": 165,
+        "allergie": true,
+        "allergieDetails":[ "Pénicilline"],
+        "traitements": [
+          {
+            "date": "2023-12-02",
+            "medicament": null,
+            "analyse": "Dermatographie"
+          }
+        ]
+      }
+    ]
+  }
+  
