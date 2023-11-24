@@ -52,18 +52,16 @@
         "patientId": 1,
         "medecinId": 1,
         "date": "2023-12-01T10:00:00",
-        "motif": "Consultation de routine",
-        "medicament": "Aspirine",
-        "analyse": null
+        "motif": "Consultation de routine"
+        
       },
       {
         "id": 2,
         "patientId": 2,
         "medecinId": 2,
         "date": "2023-12-02T14:30:00",
-        "motif": "Problèmes de peau",
-        "medicament": null,
-        "analyse": "Dermatographie"
+        "motif": "Problèmes de peau"
+        
       }
     ],
   "dossierMedical": [
