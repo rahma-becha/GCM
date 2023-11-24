@@ -8,8 +8,10 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ListPatientsComponent } from './list-patients/list-patients.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ListRVComponent } from './list-rv/list-rv.component';
+import { PatientService } from 'src/services/patient.service';
+import { RendezvousService } from 'src/services/rendrezvous.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,11 @@ import { ListRVComponent } from './list-rv/list-rv.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    HttpClient,
+    PatientService,
+    RendezvousService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

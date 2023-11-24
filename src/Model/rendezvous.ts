@@ -1,7 +1,8 @@
+import { Patient } from "./Patient";
+
 export class Rendezvous {
     id!: number;
-    patientId!: number;
-    medecinId!: number;
+    patient!: Patient;
     date!: string;
     motif!: string;
     

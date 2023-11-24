@@ -25,7 +25,6 @@
                                     <tr>
                                         
                                         <th class="ps-1">Nom & Prénom Patient</th>
-                                        <th >Nom & Prénom Medicien</th>
 
                                         <th>Date</th>
                                         <th>Motif</th>
@@ -33,11 +32,10 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Accessories</td>
-                                        <td>19 July, 2023</td>
-                                        <td>$65.29</td>
-                                        <td>235</td>
+                                    <tr *ngFor="let rdv of rendezvousList">
+                                        <td>{{rdv.patient.nom+" "+rdv.patient.prenom}}</td>
+                                        <td>{{rdv.date | date}}</td>
+                                        <td>{{rdv.motif}}</td>
                                         <td>
                                             <a href="#!"
                                                 class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
