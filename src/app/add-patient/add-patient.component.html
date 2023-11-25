@@ -1,0 +1,95 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-12">
+            <!-- Page header -->
+            <div class="mb-5">
+                <h3 class="mb-0">Ajouter Patient</h3>
+            </div>
+        </div>
+    </div>
+    <div>
+        <!-- row -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header d-md-flex border-bottom-0">
+                        
+
+                    </div>
+                    <div class="card-body">
+                        <!-- Validation Form -->
+                        <form class="row g-3 needs-validation" >
+                            <div class="col-md-6">
+                                <label for="nom" class="form-label">Nom</label>
+                                <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="prenom" class="form-label">Prénom</label>
+                                <input type="text" class="form-control" id="prenom" placeholder="prénom" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="dateNaissance" class="form-label">Date De Naissance</label>
+                                <input type="date" class="form-control" name="dateNaissance" id="dateNaissance"
+                                    required>
+                                <div class="invalid-feedback">
+                                    Please provide a valid city.
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="telephone" class="form-label">Téléphone</label>
+                                <input type="tel" class="form-control" name="telephone" id="telephone" required>
+                                <div class="invalid-feedback">
+                                    Please provide a valid city.
+                                </div>
+                            </div>
+                            <div class="col-md-6 d-md-flex mt-3">
+                                <label for="genre" class="form-label">Genre</label>
+                                <div class="form-check ms-5">
+                                    <input class="form-check-input" type="radio" name="genre" id="homme">
+                                    <label class="form-check-label" for="homme">
+                                        Homme
+                                    </label>
+                                </div>
+                                <div class="form-check ms-5">
+                                    <input class="form-check-input" type="radio" name="genre" id="femme" checked>
+                                    <label class="form-check-label" for="femme">
+                                        Femme
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                <div class="form-check form-switch  mb-2">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="CNAM" name="CNAM" checked>
+                                    <label class="form-check-label" for="CNAM">CNAM</label>
+                                  </div>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="NumCnam" class="form-label">Numéro CNAM</label>
+                                <input type="text" class="form-control" id="NumCnam" name="NumCnam" placeholder="NumCnam" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <!-- Textarea -->
+                                <div class="mb-3">
+                                    <label for="adresse" class="form-label">Adresse</label>
+                                    <textarea class="form-control" id="adresse" rows="5" name="adresse">Hello World!</textarea>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary" type="submit">Valider</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

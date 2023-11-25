@@ -12,6 +12,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ListRVComponent } from './list-rv/list-rv.component';
 import { PatientService } from 'src/services/patient.service';
 import { RendezvousService } from 'src/services/rendrezvous.service';
+import { AddPatientComponent } from './add-patient/add-patient.component';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,12 +22,15 @@ import { RendezvousService } from 'src/services/rendrezvous.service';
     NavBarComponent,
     DashboardComponent,
     ListPatientsComponent,
-    ListRVComponent
+    ListRVComponent,
+    AddPatientComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     HttpClient,
