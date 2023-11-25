@@ -14,7 +14,7 @@
                 <div class="card">
                     <div class="card-header d-md-flex border-bottom-0">
                         <div class="flex-grow-1">
-                            <a href="#!" class="btn btn-primary">+ Ajouter Patient</a>
+                            <a routerLink="/patients/add" class="btn btn-primary">+ Ajouter Patient</a>
                         </div>
 
                     </div>
@@ -41,7 +41,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <tr *ngFor="let patient of patients">
                                         <td class="pe-0">
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" value=""
@@ -56,21 +56,23 @@
                                                     class="img-4by3-sm rounded-3">
                                                 <div class="ms-3">
                                                     <h5 class="mb-0">
-                                                        <a href="#!" class="text-inherit">Women Shoes</a>
+                                                        <a href="#!" class="text-inherit">{{patient.nom+" "+patient.prenom}}</a>
                                                     </h5>
 
                                                 </div>
                                             </div>
                                         </td>
-                                        <td>Accessories</td>
-                                        <td>19 July, 2023</td>
-                                        <td>$65.29</td>
-                                        <td>235</td>
+                                        <td>{{patient.dateNaissance}}</td>
+                                        <td>{{patient.genre}}</td>
+                                        <td>{{patient.adresse}}</td>
+                                        <td>{{patient.telephone}}</td>
 
                                         <td>
-                                            <span class="badge badge-success-soft">Active</span>
+                                            <span class="badge badge-success-soft" *ngIf="patient.CNAM==true">Oui</span>
+                                            <span class="badge badge-danger-soft" *ngIf="patient.CNAM==false">Non</span>
+
                                         </td>
-                                        <td>235</td>
+                                        <td>{{patient.NumCnam}}</td>
                                         <td>
                                             <a href="#!" class="btn btn-ghost btn-sm rounded-circle ">
                                                 <i class="fa fa-search"></i>

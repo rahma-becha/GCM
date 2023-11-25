@@ -1,3 +1,5 @@
+import { Rendezvous } from "./rendezvous";
+
 export class Patient {
     id?: number;
     nom?: string;
@@ -8,5 +10,6 @@ export class Patient {
     telephone?: string;
     CNAM?: boolean;
     NumCnam?: number;
+    rendezvous?:Rendezvous[]
   }
   
