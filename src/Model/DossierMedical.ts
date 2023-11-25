@@ -1,3 +1,4 @@
+import { Alergie } from "./Alergie";
 import { Patient } from "./Patient";
 import { Traitement } from "./Traitement";
 
@@ -7,7 +8,7 @@ export class DossierMedical {
     poids!: number;
     taille!: number;
     allergie!: boolean;
-    allergieDetails?: string[];
+    allergieDetails?: Alergie[];
     traitements?: Traitement[];
   }
   

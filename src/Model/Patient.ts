@@ -1,3 +1,4 @@
+import { DossierMedical } from "./DossierMedical";
 import { Rendezvous } from "./rendezvous";
 
 export class Patient {
@@ -11,5 +12,6 @@ export class Patient {
     CNAM?: boolean;
     NumCnam?: number;
     rendezvous?:Rendezvous[]
+    dossierMedical?:DossierMedical
   }
   
