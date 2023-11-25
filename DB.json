@@ -1,116 +1,127 @@
 {
-    "patients": [
+  "patients": [
+    {
+      "id": 1,
+      "nom": "Dupont",
+      "prenom": "Jean",
+      "dateNaissance": "1980-01-15",
+      "genre": "Homme",
+      "adresse": "123 Rue de la Santé",
+      "telephone": "0123456789",
+      "CNAM": true,
+      "NumCnam": 12358
+    },
+    {
+      "id": 2,
+      "nom": "Dupont",
+      "prenom": "Jean",
+      "dateNaissance": "1990-01-15",
+      "genre": "Homme",
+      "adresse": "123 Rue de la Santé",
+      "telephone": "987654321",
+      "CNAM": true,
+      "NumCnam": 87654
+    },
+    {
+      "id": 2,
+      "nom": "Martin",
+      "prenom": "Marie",
+      "dateNaissance": "1995-05-20",
+      "genre": "Femme",
+      "adresse": "456 Avenue Médicale",
+      "telephone": "0987654321",
+      "CNAM": false
+    },
+    {
+      "nom": "P11",
+      "prenom": "P11",
+      "dateNaissance": "2023-09-25",
+      "telephone": "87654321",
+      "genre": "Femme",
+      "CNAM": true,
+      "NumCnam": "11555",
+      "adresse": "adresse adresse",
+      "id": 3
+    }
+  ],
+  "medecin": [
+    {
+      "id": 1,
+      "nom": "Dr. Dubois",
+      "specialite": "Cardiologue",
+      "telephone": "0123456789",
+      "email": "Dubois@gmail.com",
+      "password": "Dubois123",
+      "role": "medcin"
+    }
+  ],
+  "secraitaire": [
+    {
+      "id": 1,
+      "nom": "secretaire",
+      "specialite": "Cardiologue",
+      "telephone": "0123456789",
+      "email": "Dubois@gmail.com",
+      "password": "Dubois123",
+      "role": "secretaire"
+    }
+  ],
+  "rendezvous": [
+    {
+      "id": 1,
+      "patient": {
+        "id": 1,
+        "nom": "Dupont",
+        "prenom": "Jean"
+      },
+      "date": "2023-12-01T10:00:00",
+      "motif": "Consultation de routine"
+    },
+    {
+      "id": 2,
+      "patient": {
+        "id": 2,
+        "nom": "Martin",
+        "prenom": "Marie"
+      },
+      "date": "2023-12-02T14:30:00",
+      "motif": "Problèmes de peau"
+    }
+  ],
+  "dossierMedical": [
+    {
+      "id": 1,
+      "patientId": 1,
+      "poids": 75,
+      "taille": 180,
+      "allergie": false,
+      "traitements": [
         {
-            "id": 1,
-            "nom": "Dupont",
-            "prenom": "Jean",
-            "dateNaissance": "1980-01-15",
-            "genre": "Homme",
-            "adresse": "123 Rue de la Santé",
-            "telephone": "0123456789",
-            "CNAM": true,
-            "NumCnam": 12358
-        },
-        {
-            "id": 2,
-            "nom": "Dupont",
-            "prenom": "Jean",
-            "dateNaissance": "1990-01-15",
-            "genre": "Homme",
-            "adresse": "123 Rue de la Santé",
-            "telephone": "987654321",
-            "CNAM": true,
-            "NumCnam": 87654
-        },
-        {
-            "id": 2,
-            "nom": "Martin",
-            "prenom": "Marie",
-            "dateNaissance": "1995-05-20",
-            "genre": "Femme",
-            "adresse": "456 Avenue Médicale",
-            "telephone": "0987654321",
-            "CNAM": false
+          "date": "2023-12-01",
+          "medicament": [
+            "Aspirine",
+            "doliprane"
+          ],
+          "analyse": null
         }
-    ],
-    "medecin": [
+      ]
+    },
+    {
+      "id": 2,
+      "patientId": 2,
+      "poids": 60,
+      "taille": 165,
+      "allergie": true,
+      "allergieDetails": [
+        "Pénicilline"
+      ],
+      "traitements": [
         {
-            "id": 1,
-            "nom": "Dr. Dubois",
-            "specialite": "Cardiologue",
-            "telephone": "0123456789",
-            "email": "Dubois@gmail.com",
-            "password": "Dubois123",
-            "role": "medcin"
+          "date": "2023-12-02",
+          "medicament": null,
+          "analyse": "Dermatographie"
         }
-    ],
-    "secraitaire": [
-        {
-            "id": 1,
-            "nom": "secretaire",
-            "specialite": "Cardiologue",
-            "telephone": "0123456789",
-            "email": "Dubois@gmail.com",
-            "password": "Dubois123",
-            "role": "secretaire"
-        }
-    ],
-    "rendezvous": [
-        {
-            "id": 1,
-            "patient": {
-                "id": 1,
-                "nom": "Dupont",
-                "prenom": "Jean"
-            },
-            "date": "2023-12-01T10:00:00",
-            "motif": "Consultation de routine"
-        },
-        {
-            "id": 2,
-            "patient": {
-                "id": 2,
-                "nom": "Martin",
-                "prenom": "Marie"
-            },
-            "date": "2023-12-02T14:30:00",
-            "motif": "Problèmes de peau"
-        }
-    ],
-    "dossierMedical": [
-        {
-            "id": 1,
-            "patientId": 1,
-            "poids": 75,
-            "taille": 180,
-            "allergie": false,
-            "traitements": [
-                {
-                    "date": "2023-12-01",
-                    "medicament": [
-                        "Aspirine",
-                        "doliprane"
-                    ],
-                    "analyse": null
-                }
-            ]
-        },
-        {
-            "id": 2,
-            "patientId": 2,
-            "poids": 60,
-            "taille": 165,
-            "allergie": true,
-            "allergieDetails": [
-                "Pénicilline"
-            ],
-            "traitements": [
-                {
-                    "date": "2023-12-02",
-                    "medicament": null,
-                    "analyse": "Dermatographie"
-                }
-            ]
-        }
-    ]
+      ]
+    }
+  ]
 }

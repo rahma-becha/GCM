@@ -12,8 +12,8 @@
         <div class="row">
             <div class="col-12">
                 <div class="card">
-                    <div class="card-header d-md-flex border-bottom-0">
-                        <div class="flex-grow-1">
+                    <div class="card-header">
+                        <div class="float-end">
                             <a routerLink="/patients/add" class="btn btn-primary">+ Ajouter Patient</a>
                         </div>
 
@@ -33,7 +33,6 @@
                                         <th class="ps-1">Nom & Prénom</th>
                                         <th>Date</th>
                                         <th>Genre</th>
-                                        <th>Adresse</th>
                                         <th>Téléphone</th>
                                         <th>CNAM</th>
                                         <th>Numéro CNAM</th>
@@ -64,7 +63,6 @@
                                         </td>
                                         <td>{{patient.dateNaissance}}</td>
                                         <td>{{patient.genre}}</td>
-                                        <td>{{patient.adresse}}</td>
                                         <td>{{patient.telephone}}</td>
 
                                         <td>
@@ -78,13 +76,13 @@
                                                 <i class="fa fa-search"></i>
 
                                             </a>
-                                            <a href="#!"
+                                            <a [routerLink]="['/patients/edit',patient.id]"
                                                 class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
                                                 data-template="editTwo">
                                                 <i class="fa fa-edit"></i>
                                                
                                             </a>
-                                            <a href="#!" class="btn btn-ghost btn-sm rounded-circle ">
+                                            <a (click)="deletePatient(patient.id)" class="btn btn-ghost btn-sm rounded-circle ">
                                                 <i class="fa-sharp fa-solid fa-trash"></i>
 
                                             </a>
