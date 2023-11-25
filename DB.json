@@ -102,6 +102,24 @@
         "NumCnam": 12358
       },
       "id": 2
+    },
+    {
+      "status": "En attente d'arrivée",
+      "date": "2023-12-09",
+      "heure": "14:14",
+      "motif": "Une consultation de contrôle",
+      "patient": {
+        "id": 2,
+        "nom": "Dupont",
+        "prenom": "Jean",
+        "dateNaissance": "1990-01-15",
+        "genre": "Homme",
+        "adresse": "123 Rue de la Santé",
+        "telephone": "987654321",
+        "CNAM": true,
+        "NumCnam": 87654
+      },
+      "id": 3
     }
   ],
   "dossierMedical": [

@@ -16,18 +16,19 @@
 
                         <form class="row g-3 needs-validation" #f="ngForm" (ngSubmit)="submit()">
                             <div class="row">
-                                <div class="col-md-6">
-                                    <label for="Nom" class="form-label">Nom</label>
-                                    <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom"
-                                         [(ngModel)]="nom"  (change)="filterItems()" required>
-                                   
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="prenom" class="form-label">Prénom <code>*</code></label>
-                                    <input type="text" class="form-control" id="prnom" name="prnom" placeholder="Nom"
-                                        required [(ngModel)]="prenom"  (change)="filterItems()"
-                                        >
+                                <div class="d-flex align-items-center mb-5">
+    
+                                    <img src="../../assets/images/avatar/avatar-7.jpg" alt=""
+                                        class="img-4by3-sm rounded-circle">
+
                                     
+                                    <div class="ms-3">
+                                        <h5 class="mb-0">
+                                            <a href="#!" class="text-inherit">{{rdv.patient.nom+"
+                                                "+rdv.patient.prenom}}</a>
+                                        </h5>
+
+                                    </div>
                                 </div>
 
 
@@ -64,51 +65,7 @@
                                             obligatoire</div>
                                     </div>
                                 </div>
-                                    <div class="table-responsive mt-3"  >
-                                        <table class="table text-nowrap table-centered mt-0" style="width: 100%">
-                                            <thead class="table-light">
-                                                <tr>
-                                                    <th class="pe-0">
-    
-                                                    </th>
-                                                    <th class="ps-1">Nom & Prénom</th>
-                                                    <th>Date de naissance</th>
-    
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr *ngFor="let patient of filteredItems">
-                                                    <td class="pe-0">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="radio" [value]="patient"
-                                                                id="patient{{patient.id}}" name="patient"
-                                                                #patient="ngModel" [(ngModel)]="rdv.patient" [checked]="patient.id==rdv.patient.id" required>
-                                                            <label class="form-check-label" for="patient{{patient.id}}">
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                    <td class="ps-0">
-                                                        <div class="d-flex align-items-center">
-    
-                                                            <img src="../../assets/images/avatar/avatar-7.jpg" alt=""
-                                                                class="img-4by3-sm rounded-circle">
-    
-                                                            
-                                                            <div class="ms-3">
-                                                                <h5 class="mb-0">
-                                                                    <a href="#!" class="text-inherit">{{patient.nom+"
-                                                                        "+patient.prenom}}</a>
-                                                                </h5>
-    
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>{{patient.dateNaissance}}</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                               
+                                  
                                 <div class="col-12 mt-3">
                                     <button class="btn btn-primary" type="submit"
                                         [disabled]="f.invalid">Valider</button>

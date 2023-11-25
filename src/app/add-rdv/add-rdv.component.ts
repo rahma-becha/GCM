@@ -13,10 +13,8 @@ import { RendezvousService } from 'src/services/rendrezvous.service';
 export class AddRDVComponent {
   items: Patient[] = [];
   filteredItems: Patient[] = [];
-
-  selectedDate: string = '';
   statuts: string[] = ["Une consultation de contrôle", "Un renouvellement d'ordonnance", "Un suivi d'une maladie chronique","Un bilan de santé","Un vaccin"];
-  selectedStatut: string = '';
+  
 
   nom:String="";
   prenom:String=""
