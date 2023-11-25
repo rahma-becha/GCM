@@ -14,6 +14,7 @@ import { PatientService } from 'src/services/patient.service';
 import { RendezvousService } from 'src/services/rendrezvous.service';
 import { AddPatientComponent } from './add-patient/add-patient.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { AddRDVComponent } from './add-rdv/add-rdv.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
     DashboardComponent,
     ListPatientsComponent,
     ListRVComponent,
-    AddPatientComponent
+    AddPatientComponent,
+    AddRDVComponent
   ],
   imports: [
     BrowserModule,

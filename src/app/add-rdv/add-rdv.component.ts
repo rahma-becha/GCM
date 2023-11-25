@@ -34,4 +34,7 @@ export class AddRDVComponent {
       item.prenom?.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
   }
+  submit(){
+    console.log();
+   }
 }
