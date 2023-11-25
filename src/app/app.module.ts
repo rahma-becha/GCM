@@ -16,6 +16,8 @@ import { AddPatientComponent } from './add-patient/add-patient.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AddRDVComponent } from './add-rdv/add-rdv.component';
 import { DossierMedicaleComponent } from './dossier-medicale/dossier-medicale.component';
+import { EditPatientComponent } from './edit-patient/edit-patient.component';
+import { EditRDVComponent } from './edit-rdv/edit-rdv.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { DossierMedicaleComponent } from './dossier-medicale/dossier-medicale.co
     ListRVComponent,
     AddPatientComponent,
     AddRDVComponent,
-    DossierMedicaleComponent
+    DossierMedicaleComponent,
+    EditPatientComponent,
+    EditRDVComponent
   ],
   imports: [
     BrowserModule,

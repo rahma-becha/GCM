@@ -6,6 +6,8 @@ import { ListRVComponent } from './list-rv/list-rv.component';
 import { AddPatientComponent } from './add-patient/add-patient.component';
 import { AddRDVComponent } from './add-rdv/add-rdv.component';
 import { DossierMedicaleComponent } from './dossier-medicale/dossier-medicale.component';
+import { EditPatientComponent } from './edit-patient/edit-patient.component';
+import { EditRDVComponent } from './edit-rdv/edit-rdv.component';
 
 const routes: Routes = [
   {path:"dashboard",component:DashboardComponent},
@@ -13,7 +15,11 @@ const routes: Routes = [
   {path:"patients/add",component:AddPatientComponent},
   {path:"rendez-vous",component:ListRVComponent},
   {path:"rendez-vous/add",component:AddRDVComponent},
-  {path:"patients/dossiermedicale",component:DossierMedicaleComponent}
+  {path:"patients/dossiermedicale",component:DossierMedicaleComponent},
+  {path:"patients/edit/:id",component:EditPatientComponent},
+  {path:"rendez-vous/edit/:id",component:EditRDVComponent},
+
+
 ];
 
 @NgModule({
