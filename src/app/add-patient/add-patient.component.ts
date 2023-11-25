@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Patient } from 'src/Model/Patient';
 
 @Component({
   selector: 'app-add-patient',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./add-patient.component.css']
 })
 export class AddPatientComponent {
+   patient:Patient=new Patient()
 
+   submit(){
+    console.log(this.patient)
+   }
 }
