@@ -13,6 +13,17 @@
         },
         {
             "id": 2,
+            "nom": "Dupont",
+            "prenom": "Jean",
+            "dateNaissance": "1990-01-15",
+            "genre": "Homme",
+            "adresse": "123 Rue de la Santé",
+            "telephone": "987654321",
+            "CNAM": true,
+            "NumCnam": 87654
+        },
+        {
+            "id": 2,
             "nom": "Martin",
             "prenom": "Marie",
             "dateNaissance": "1995-05-20",

@@ -14,6 +14,7 @@ export class AddRDVComponent {
   nom:String="";
   prenom:String=""
   rdv:Rendezvous=new Rendezvous()
+  statuts: string[] = ["En attente d'arrivée", "En cours", "Clôture"];
   constructor(private patientService: PatientService) {}
 
   ngOnInit() {
@@ -36,6 +37,7 @@ export class AddRDVComponent {
     console.log(this.filteredItems)
   }
   submit(){
-    console.log();
+    console.log(this.rdv);
    }
+  
 }

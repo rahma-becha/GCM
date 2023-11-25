@@ -18,7 +18,7 @@
                     </div>
                     <div class="card-body">
                         <!-- Validation Form -->
-                        <form class="row g-3 needs-validation" #patientForm="ngForm" (ngSubmit)="submit">
+                        <form class="row g-3 needs-validation" #patientForm="ngForm" (ngSubmit)="submit()">
                             <div class="col-md-6">
                                 <label for="nom" class="form-label">Nom <code>*</code></label>
                                 <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom" required

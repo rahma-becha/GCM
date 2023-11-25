@@ -33,7 +33,18 @@
                                 </thead>
                                 <tbody>
                                     <tr *ngFor="let rdv of rendezvousList">
-                                        <td>{{rdv.patient.nom+" "+rdv.patient.prenom}}</td>
+                                        <td class="ps-0">
+                                            <div class="d-flex align-items-center">
+                                                <img src="../../assets/images/avatar/avatar-7.jpg" alt=""
+                                                    class="img-4by3-sm rounded-circle">
+                                                <div class="ms-3">
+                                                    <h5 class="mb-0">
+                                                        <a href="#!" class="text-inherit">{{rdv.patient.nom+" "+rdv.patient.prenom}}</a>
+                                                    </h5>
+
+                                                </div>
+                                            </div>
+                                        </td>
                                         <td>{{rdv.date | date}}</td>
                                         <td>{{rdv.motif}}</td>
                                         <td>
