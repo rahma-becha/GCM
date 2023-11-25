@@ -9,111 +9,182 @@
     </div>
     <div>
         <!-- row -->
-       
-                        <div class="row">
-                            <div class="col-lg-8 ">
-                                <!-- card -->
-                              <div class="card mb-4">
-                                  <!-- card body -->
-                                <div class="card-body">
-                                  <div>
-                                      <!-- input -->
+
+        <div class="row">
+            <div class="col-lg-8 ">
+                <!-- card -->
+                <div class="card mb-4">
+                    <!-- card body -->
+                    <div class="card-body">
+                        <div>
+                            <!-- input -->
+                            <div class="mb-3">
+                                <label class="form-label">Titre Traitement</label>
+                                <input type="text" class="form-control" placeholder="Enter Titre de traitement"
+                                    required>
+                            </div>
+                            <!-- input -->
+                            <div>
+                                <label for="textarea-input" class="form-label">Liste Medicament</label>
+                                <textarea class="form-control" id="textarea-input" rows="5">...</textarea>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-lg-8 ">
+                <!-- card -->
+                <div class="card mb-4">
+                    <!-- card body -->
+                    <div class="card-body">
+                        <div>
+                            <!-- input -->
+                            <div class="mb-3">
+                                <label class="form-label">Titre d'analyse</label>
+                                <input type="text" class="form-control" placeholder="Enter Titre de traitement"
+                                    required>
+                            </div>
+                            <!-- input -->
+                            <div>
+                                <label for="fileInput" class="form-label">Pièce jointe :</label>
+                                <input type="file" class="form-control" id="fileInput"
+                                    (change)="onFileSelected($event)">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-lg-8 ">
+                <!-- card -->
+                <div class="card mb-4">
+                    <!-- card body -->
+                    <div class="card-body">
+                        <div>
+                            <!-- input -->
+                            <div class="mb-3">
+                                <h3 class="mb-1">Historique</h3>
+                            </div>
+                            <!-- input -->
+                            <div>
+                                <div class="border p-4 rounded-3">
+                                    <!-- Titre de la session -->
+                                    <h5 class="mb-3 text-dark">Titre analyse 1</h5>
+                                  
+                                    <!-- Description de la session -->
                                     <div class="mb-3">
-                                      <label class="form-label">Product Title</label>
-                                      <input type="text" class="form-control" placeholder="Enter Product Title" required>
-                                    </div>
-                                      <!-- input -->
-                                    <div>
-                                      <label class="form-label">Product Description</label>
-                                      <div class="pb-8" id="editor"></div>
+                                      <p class="mb-0">med1</p>
+                                      <p class="mb-0">med2</p>
+                                      <p class="mb-0">Titre analyse 1</p>
+                                      <p class="mb-0">Description d'analyse 1</p>
                                     </div>
                                   </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-lg-4 col-12">
-
-                                <div class="card mb-4">
-
-                                    <div class="card-body">
-                                        <div>
-                                            <div class="mb-3">
-                                                <label class="form-label">Taille</label>
-                                                <input type="text" class="form-control"
-                                                    placeholder="Enter Taille">
-                                            </div>
-
-                                            <div class="mb-3">
-                                                <label class="form-label">Poid</label>
-                                                <input type="text" class="form-control"
-                                                    placeholder="Enter Poid">
-                                            </div>
-
-                                            <div class="mb-3">
-                                                <label class="form-label" id="productSKU">Gender</label><br>
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio"
-                                                        name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                                                    <label class="form-check-label" for="inlineRadio1">Male</label>
-                                                </div>
-
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio"
-                                                        name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                                    <label class="form-check-label" for="inlineRadio2">Female</label>
-                                                </div>
-
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio"
-                                                        name="inlineRadioOptions" id="inlineRadio3" value="option2">
-                                                    <label class="form-check-label" for="inlineRadio3">Kids</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card mb-4">
-
-                                            <div class="card-body">
-
-                                                <div class="mb-3">
-                                                    <div class="form-check form-switch mb-4">
-                                                        <input class="form-check-input" type="checkbox" role="switch"
-                                                            id="flexSwitchAlergie" checked>
-                                                        <label class="form-check-label"
-                                                            for="flexSwitchAlergie">Alergie</label>
-                                                    </div>
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label class="form-label">Nom Alergie</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder="Enter Nom Alergie">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card mb-4">
-                                    <!-- card body -->
-                                  <div class="card-body">
-                                      <!-- input -->
+                                  <div class="border p-4 rounded-3">
+                                    <!-- Titre de la session -->
+                                    <h5 class="mb-3 text-dark">Titre analyse 1</h5>
+                                  
+                                    <!-- Description de la session -->
                                     <div class="mb-3">
-                                      <label class="form-label">prix payée</label>
-                                      <input type="text" class="form-control" placeholder="$ 49.00">
+                                      <p class="mb-0">med1</p>
+                                      <p class="mb-0">med2</p>
+                                      <p class="mb-0">Titre analyse 1</p>
+                                      <p class="mb-0">Description d'analyse 1</p>
                                     </div>
-                                      <!-- input -->
-                                    <div class="mb-3">
-                                      <label class="form-label">prix Restant</label>
-                                      <label class="form-label form-control">Le prix Restant est : 100 dt</label>
-                                    </div>
-                                    <div class="d-grid">
-                                        <a href="#!" class="btn btn-primary">
-                                          Enregistrer Modification
-                                        </a>
-                                      </div>
-                                    
                                   </div>
+                                  
+                            </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            
+            <div class="col-lg-4 col-12">
+
+                <div class="card mb-4">
+
+                    <div class="card-body">
+                        <div>
+                            <div class="mb-3">
+                                <label class="form-label">Taille</label>
+                                <input type="text" class="form-control" placeholder="Enter Taille">
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Poid</label>
+                                <input type="text" class="form-control" placeholder="Enter Poid">
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label" id="productSKU">Gender</label><br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                        id="inlineRadio1" value="option1">
+                                    <label class="form-check-label" for="inlineRadio1">Male</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                        id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">Female</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                        id="inlineRadio3" value="option2">
+                                    <label class="form-check-label" for="inlineRadio3">Kids</label>
                                 </div>
                             </div>
-                            
+                        </div>
+                        <div class="card mb-4">
+
+                            <div class="card-body">
+
+                                <div class="mb-3">
+                                    <div class="form-check form-switch mb-4">
+                                        <input class="form-check-input" type="checkbox" role="switch"
+                                            id="flexSwitchAlergie" checked>
+                                        <label class="form-check-label" for="flexSwitchAlergie">Alergie</label>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Nom Alergie</label>
+                                    <input type="text" class="form-control" placeholder="Enter Nom Alergie">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-  
+                <div class="card mb-4">
+                    <!-- card body -->
+                    <div class="card-body">
+                        <!-- input -->
+                        <div class="mb-3">
+                            <label class="form-label">prix payée</label>
+                            <input type="text" class="form-control" placeholder="$ 49.00">
+                        </div>
+                        <!-- input -->
+                        <div class="mb-3">
+                            <label class="form-label">prix Restant</label>
+                            <label class="form-label form-control">Le prix Restant est : 100 dt</label>
+                        </div>
+                        <div class="d-grid">
+                            <a href="#!" class="btn btn-primary">
+                                Enregistrer Modification
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
