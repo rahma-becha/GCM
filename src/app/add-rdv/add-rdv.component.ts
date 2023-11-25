@@ -11,10 +11,14 @@ import { PatientService } from 'src/services/patient.service';
 export class AddRDVComponent {
   items: Patient[] = [];
   filteredItems: Patient[] = [];
+
+  selectedDate: string = '';
+  statuts: string[] = ["En attente d'arrivée", "En cours", "Clôture"];
+  selectedStatut: string = '';
+
   nom:String="";
   prenom:String=""
   rdv:Rendezvous=new Rendezvous()
-  statuts: string[] = ["En attente d'arrivée", "En cours", "Clôture"];
   constructor(private patientService: PatientService) {}
 
   ngOnInit() {
