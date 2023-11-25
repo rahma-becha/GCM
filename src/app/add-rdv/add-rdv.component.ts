@@ -13,6 +13,8 @@ export class AddRDVComponent {
   selectedPatient: Patient | undefined;
   filteredItems: Patient[] = [];
   selectedDate: string = '';
+  statuts: string[] = ["En attente d'arrivée", "En cours", "Clôture"];
+  selectedStatut: string = '';
   constructor(private patientService: PatientService) {}
 
   ngOnInit() {

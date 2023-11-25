@@ -15,6 +15,7 @@ import { RendezvousService } from 'src/services/rendrezvous.service';
 import { AddPatientComponent } from './add-patient/add-patient.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AddRDVComponent } from './add-rdv/add-rdv.component';
+import { DossierMedicaleComponent } from './dossier-medicale/dossier-medicale.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AddRDVComponent } from './add-rdv/add-rdv.component';
     ListPatientsComponent,
     ListRVComponent,
     AddPatientComponent,
-    AddRDVComponent
+    AddRDVComponent,
+    DossierMedicaleComponent
   ],
   imports: [
     BrowserModule,

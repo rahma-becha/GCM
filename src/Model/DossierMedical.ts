@@ -1,8 +1,9 @@
+import { Patient } from "./Patient";
 import { Traitement } from "./Traitement";
 
 export class DossierMedical {
     id!: number;
-    patientId!: number;
+    patient!: Patient;
     poids!: number;
     taille!: number;
     allergie!: boolean;
