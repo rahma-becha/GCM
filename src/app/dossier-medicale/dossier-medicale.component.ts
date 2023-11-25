@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./dossier-medicale.component.css']
 })
 export class DossierMedicaleComponent {
+  selectedFile: File | undefined;
 
+  onFileSelected(event: any) {
+    this.selectedFile = event.target.files[0];
+  }
 }
