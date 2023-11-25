@@ -12,13 +12,55 @@
         <div class="row">
             <div class="col-12">
                 <div class="card">
-                    <div class="card-header d-md-flex border-bottom-0">
-                        <div class="flex-grow-1">
-                            <a href="#!" class="btn btn-primary">+ Ajouter Patient</a>
-                        </div>
-
-                    </div>
                     <div class="card-body">
+                       
+
+                        <form class="row g-3 needs-validation" #patientForm="ngForm" (ngSubmit)="submit">
+                            <div class="container mt-3">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" [(ngModel)]!="searchTerm"
+                                            placeholder="Search">
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-md-6">
+                                        <select class="form-control" [(ngModel)]!="selectedPatient">
+                                            <option *ngFor="let patient of filteredItems" [value]="patient">{{
+                                                patient.nom}} {{ patient.prenom }}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="container mt-3">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="datePicker">Choose a date:</label>
+                                        <input type="date" id="datePicker" class="form-control"
+                                            [(ngModel)]!="selectedDate" name="selectedDate">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Select Option -->
+                            <div class="mb-3">
+                                <label class="form-label" for="selectOne">Select <span
+                                        class="text-secondary">(Optional)</span></label>
+                                <select class="form-select" aria-label="Default select example" name="selectedStatus"
+                                    [(ngModel)]!="selectedStatus">
+                                    <option selected>défini le statut</option>
+                                    <option value="1">En attente d'arrivée</option>
+                                    <option value="2">En cours</option>
+                                    <option value="3">Clôturé</option>
+                                </select>
+                            </div>
+
+                            <button class="btn btn-success" [disabled]="f.invalid" type="submit">Save</button>
+                        </form>
+
+
+
                     </div>
                 </div>
             </div>

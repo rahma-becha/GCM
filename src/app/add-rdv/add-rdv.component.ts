@@ -12,7 +12,7 @@ export class AddRDVComponent {
   searchTerm: string = '';
   selectedPatient: Patient | undefined;
   filteredItems: Patient[] = [];
-
+  selectedDate: string = '';
   constructor(private patientService: PatientService) {}
 
   ngOnInit() {

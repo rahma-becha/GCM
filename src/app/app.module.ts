@@ -10,7 +10,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ListPatientsComponent } from './list-patients/list-patients.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ListRVComponent } from './list-rv/list-rv.component';
-import { AddRDVComponent } from './add-rdv/add-rdv.component';
+import { PatientService } from 'src/services/patient.service';
+import { RendezvousService } from 'src/services/rendrezvous.service';
+import { AddPatientComponent } from './add-patient/add-patient.component';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,7 @@ import { AddRDVComponent } from './add-rdv/add-rdv.component';
     DashboardComponent,
     ListPatientsComponent,
     ListRVComponent,
-    AddRDVComponent
+    AddPatientComponent
   ],
   imports: [
     BrowserModule,
