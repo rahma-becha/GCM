@@ -10,6 +10,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ListPatientsComponent } from './list-patients/list-patients.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ListRVComponent } from './list-rv/list-rv.component';
+import { AddRDVComponent } from './add-rdv/add-rdv.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ListRVComponent } from './list-rv/list-rv.component';
     NavBarComponent,
     DashboardComponent,
     ListPatientsComponent,
-    ListRVComponent
+    ListRVComponent,
+    AddRDVComponent
   ],
   imports: [
     BrowserModule,

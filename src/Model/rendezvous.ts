@@ -1,7 +1,7 @@
 export class Rendezvous {
     id!: number;
-    patientId!: number;
-    medecinId!: number;
+    patient!: number;
+    
     date!: string;
     motif!: string;
     
