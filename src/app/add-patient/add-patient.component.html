@@ -13,51 +13,65 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header d-md-flex border-bottom-0">
-                        
+
 
                     </div>
                     <div class="card-body">
                         <!-- Validation Form -->
-                        <form class="row g-3 needs-validation" >
+                        <form class="row g-3 needs-validation" #patientForm="ngForm" (ngSubmit)="submit">
                             <div class="col-md-6">
-                                <label for="nom" class="form-label">Nom</label>
-                                <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom" required>
-                                <div class="valid-feedback">
-                                    Looks good!
+                                <label for="nom" class="form-label">Nom <code>*</code></label>
+                                <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom" required
+                                    #nom="ngModel" [(ngModel)]="patient.nom">
+                                <div class="text-danger mt-2" *ngIf="nom.invalid && nom.touched">
+                                    <div *ngIf="nom.errors?.['required']" class="mt-2">Le champ nom est obligatoire
+                                    </div>
+
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <label for="prenom" class="form-label">Prénom</label>
-                                <input type="text" class="form-control" id="prenom" placeholder="prénom" required>
-                                <div class="valid-feedback">
-                                    Looks good!
+                                <label for="prenom" class="form-label">Prénom <code>*</code></label>
+                                <input type="text" class="form-control" id="prenom" name="prenom" placeholder="prénom" required
+                                    #prenom="ngModel" [(ngModel)]="patient.prenom">
+                                <div class="text-danger mt-2" *ngIf="prenom.invalid && prenom.touched">
+                                    <div *ngIf="prenom.errors?.['required']" class="mt-2">Le champ Prénom est
+                                        obligatoire</div>
+
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <label for="dateNaissance" class="form-label">Date De Naissance <code>*</code></label>
+                                <input type="date" class="form-control" name="dateNaissance" #dateNaissance="ngModel"
+                                    [(ngModel)]="patient.dateNaissance" id="dateNaissance" required>
+                                <div class="text-danger mt-2" *ngIf="dateNaissance.invalid && dateNaissance.touched">
+                                    <div *ngIf="dateNaissance.errors?.['required']" class="mt-2">Le champ date de
+                                        naissance est obligatoire</div>
+
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <label for="dateNaissance" class="form-label">Date De Naissance</label>
-                                <input type="date" class="form-control" name="dateNaissance" id="dateNaissance"
-                                    required>
-                                <div class="invalid-feedback">
-                                    Please provide a valid city.
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="telephone" class="form-label">Téléphone</label>
-                                <input type="tel" class="form-control" name="telephone" id="telephone" required>
-                                <div class="invalid-feedback">
-                                    Please provide a valid city.
+                                <label for="telephone" class="form-label">Téléphone <code>*</code></label>
+                                <input type="text" class="form-control" name="telephone" id="telephone" required
+                                    #telephone="ngModel" [(ngModel)]="patient.telephone" pattern="[0-9]{8}">
+                                <div class="text-danger mt-2" *ngIf="telephone.invalid && telephone.touched">
+                                    <div *ngIf="telephone.errors?.['required']" class="mt-2">Le champ telephone est
+                                        obligatoire</div>
+                                    <div *ngIf="telephone.errors?.['paatern']" class="mt-2">Le champ telephone doit être
+                                        numérique</div>
+
                                 </div>
                             </div>
                             <div class="col-md-6 d-md-flex mt-3">
-                                <label for="genre" class="form-label">Genre</label>
+                                <label for="genre" class="form-label">Genre <code>*</code></label>
                                 <div class="form-check ms-5">
-                                    <input class="form-check-input" type="radio" name="genre" id="homme">
+                                    <input class="form-check-input" type="radio" value="Homme" name="genre" #genre="ngModel" [(ngModel)]="patient.genre" id="homme">
                                     <label class="form-check-label" for="homme">
                                         Homme
                                     </label>
                                 </div>
                                 <div class="form-check ms-5">
-                                    <input class="form-check-input" type="radio" name="genre" id="femme" checked>
+                                    <input class="form-check-input" type="radio" value="Femme" name="genre" #genre="ngModel" [(ngModel)]="patient.genre" id="femme" checked>
                                     <label class="form-check-label" for="femme">
                                         Femme
                                     </label>
@@ -65,13 +79,15 @@
                             </div>
                             <div class="col-md-6 mt-3">
                                 <div class="form-check form-switch  mb-2">
-                                    <input class="form-check-input" type="checkbox" role="switch" id="CNAM" name="CNAM" checked>
+                                    <input class="form-check-input" type="checkbox" role="switch" id="CNAM" name="CNAM"
+                                        #CNAM="ngModel" [(ngModel)]="patient.CNAM" checked>
                                     <label class="form-check-label" for="CNAM">CNAM</label>
-                                  </div>
+                                </div>
                             </div>
-                            <div class="col-md-12">
+                            <div class="col-md-12" >
                                 <label for="NumCnam" class="form-label">Numéro CNAM</label>
-                                <input type="text" class="form-control" id="NumCnam" name="NumCnam" placeholder="NumCnam" required>
+                                <input type="text" class="form-control" id="NumCnam" name="NumCnam"
+                                    placeholder="NumCnam" #NumCnam="ngModel" [(ngModel)]="patient.NumCnam" required>
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
@@ -79,12 +95,19 @@
                             <div class="col-md-12">
                                 <!-- Textarea -->
                                 <div class="mb-3">
-                                    <label for="adresse" class="form-label">Adresse</label>
-                                    <textarea class="form-control" id="adresse" rows="5" name="adresse">Hello World!</textarea>
-                                </div>
+                                    <label for="adresse" class="form-label">Adresse <code>*</code></label>
+                                    <textarea class="form-control" id="adresse" rows="5" name="adresse"
+                                        #adresse="ngModel" [(ngModel)]="patient.adresse" required=""></textarea>
+                                        <div class="text-danger mt-2" *ngIf="adresse.invalid && adresse.touched">
+                                            <div *ngIf="adresse.errors?.['required']" class="mt-2">Le champ adresse est
+                                                obligatoire</div>
+                                           
+                                        </div>
+                                    </div>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-primary" type="submit">Valider</button>
+                                <button class="btn btn-primary" type="submit"
+                                    [disabled]="patientForm.invalid">Valider</button>
                             </div>
                         </form>
                     </div>
