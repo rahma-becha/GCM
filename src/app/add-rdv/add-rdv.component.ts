@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Patient } from 'src/Model/Patient';
 import { Rendezvous } from 'src/Model/rendezvous';
 import { PatientService } from 'src/services/patient.service';
+import { Router } from '@angular/router';
+import { RendezvousService } from 'src/services/rendrezvous.service';
 
 @Component({
   selector: 'app-add-rdv',
@@ -13,13 +15,13 @@ export class AddRDVComponent {
   filteredItems: Patient[] = [];
 
   selectedDate: string = '';
-  statuts: string[] = ["En attente d'arrivée", "En cours", "Clôture"];
+  statuts: string[] = ["Une consultation de contrôle", "Un renouvellement d'ordonnance", "Un suivi d'une maladie chronique","Un bilan de santé","Un vaccin"];
   selectedStatut: string = '';
 
   nom:String="";
   prenom:String=""
   rdv:Rendezvous=new Rendezvous()
-  constructor(private patientService: PatientService) {}
+  constructor(private patientService: PatientService,private rdvService:RendezvousService,private router:Router){}
 
   ngOnInit() {
     this.patientService.getPatients().subscribe(
@@ -38,10 +40,11 @@ export class AddRDVComponent {
       item.nom?.toLowerCase().includes(this.nom.toLowerCase()) &&
       item.prenom?.toLowerCase().includes(this.prenom.toLowerCase())
     );
-    console.log(this.filteredItems)
   }
   submit(){
-    console.log(this.rdv);
+    this.rdvService.addRendezvous(this.rdv).subscribe((data)=>{
+      this.router.navigate(["/rendez-vous"])
+    })
    }
   
 }

@@ -42,9 +42,18 @@
                                     </div>
                                 </div>
 
+                                <div class="col-md-6">
+                                    <label for="heure" class="form-label">Heure de rendez-vous:</label>
+                                    <input type="time" id="heure" class="form-control" #heure="ngModel"
+                                        [(ngModel)]="rdv.heure" name="heure" required>
+                                    <div class="text-danger mt-2" *ngIf="heure.invalid && heure.touched">
+                                        <div *ngIf="heure.errors?.['required']" class="mt-2">Le champ heure est
+                                            obligatoire</div>
+                                    </div>
+                                </div>
 
                                 <!-- Select Option -->
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-12 mb-3">
                                     <label for="statutSelect" class="form-label">Motif :</label>
                                     <select class="form-select" id="statutSelect" name="motif" #motif="ngModel"
                                         [(ngModel)]="rdv.motif" required>
@@ -73,8 +82,8 @@
                                                     <td class="pe-0">
                                                         <div class="form-check">
                                                             <input class="form-check-input" type="radio" [value]="patient"
-                                                                id="patient{{patient.id}}" name="patient{{patient.id}}"
-                                                                #patient="ngModel" [(ngModel)]="rdv.patient">
+                                                                id="patient{{patient.id}}" name="patient"
+                                                                #patient="ngModel" [(ngModel)]="rdv.patient" required>
                                                             <label class="form-check-label" for="patient{{patient.id}}">
                                                             </label>
                                                         </div>

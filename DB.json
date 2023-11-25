@@ -68,24 +68,22 @@
   ],
   "rendezvous": [
     {
-      "id": 1,
+      "status": "En attente d'arrivée",
+      "date": "2023-12-02",
+      "heure": "16:07",
+      "motif": "Une consultation de contrôle",
       "patient": {
         "id": 1,
         "nom": "Dupont",
-        "prenom": "Jean"
+        "prenom": "Jean",
+        "dateNaissance": "1980-01-15",
+        "genre": "Homme",
+        "adresse": "123 Rue de la Santé",
+        "telephone": "0123456789",
+        "CNAM": true,
+        "NumCnam": 12358
       },
-      "date": "2023-12-01T10:00:00",
-      "motif": "Consultation de routine"
-    },
-    {
-      "id": 2,
-      "patient": {
-        "id": 2,
-        "nom": "Martin",
-        "prenom": "Marie"
-      },
-      "date": "2023-12-02T14:30:00",
-      "motif": "Problèmes de peau"
+      "id": 1
     }
   ],
   "dossierMedical": [
