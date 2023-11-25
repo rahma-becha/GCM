@@ -24,7 +24,7 @@ import { EditRDVComponent } from './edit-rdv/edit-rdv.component';
     AppComponent,
     SideBarComponent,
     NavBarComponent,
-    DashboardComponent,
+    DashboardComponent, 
     ListPatientsComponent,
     ListRVComponent,
     AddPatientComponent,
