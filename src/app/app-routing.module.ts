@@ -13,7 +13,7 @@ const routes: Routes = [
   {path:"patients/add",component:AddPatientComponent},
   {path:"rendez-vous",component:ListRVComponent},
   {path:"rendez-vous/add",component:AddRDVComponent},
-  {path:"DossierMedicale",component:DossierMedical}
+  {path:"patients/DossierMedicale",component:DossierMedical}
 ];
 
 @NgModule({

@@ -14,45 +14,94 @@
                 <div class="card">
                     <div class="card-body">
 
-
-                        <form class="row g-3 needs-validation" #f="ngForm" (ngSubmit)="submit">
-                            <!-- add-rdv.component.html -->
-                            <div class="container mt-3">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label for="searchDropdown">Searchable Dropdown:</label>
-                                        <select class="form-control" id="searchDropdown" (change)="filterItems()"
-                                            [(ngModel)]="selectedPatient">
-                                            <option *ngFor="let patient of filteredItems" [value]="patient">{{
-                                                patient.nom }} {{ patient.prenom }}</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="container mt-3">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label for="datePicker">Choose a date:</label>
-                                        <input type="date" id="datePicker" class="form-control"
-                                            [(ngModel)]!="selectedDate" name="selectedDate">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Select Option -->
-                           <div class="mb-3">
+                        <form class="row g-3 needs-validation" #f="ngForm" (ngSubmit)="submit()">
+                            <div class="row">
                                 <div class="col-md-6">
-                                    <label for="statutSelect" class="form-label">Choose a status:</label>
-                                    <select class="form-select" id="statutSelect" [(ngModel)]="selectedStatut">
-                                        <option value="" disabled>Select a status</option>
+                                    <label for="Nom" class="form-label">Nom</label>
+                                    <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom"
+                                         [(ngModel)]="nom"  (change)="filterItems()" required>
+                                   
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="prenom" class="form-label">Prénom <code>*</code></label>
+                                    <input type="text" class="form-control" id="prnom" name="prnom" placeholder="Nom"
+                                        required [(ngModel)]="prenom"  (change)="filterItems()"
+                                        >
+                                    
+                                </div>
+
+
+
+                                <div class="col-md-6">
+                                    <label for="date" class="form-label">Date de rendez-vous:</label>
+                                    <input type="date" id="date" class="form-control" #date="ngModel"
+                                        [(ngModel)]="rdv.date" name="date" required>
+                                    <div class="text-danger mt-2" *ngIf="date.invalid && date.touched">
+                                        <div *ngIf="date.errors?.['required']" class="mt-2">Le champ Date est
+                                            obligatoire</div>
+                                    </div>
+                                </div>
+
+
+                                <!-- Select Option -->
+                                <div class="col-md-6 mb-3">
+                                    <label for="statutSelect" class="form-label">Motif :</label>
+                                    <select class="form-select" id="statutSelect" name="motif" #motif="ngModel"
+                                        [(ngModel)]="rdv.motif" required>
+                                        <option value="" selected>Select a status</option>
                                         <option *ngFor="let statut of statuts" [value]="statut">{{ statut }}</option>
                                     </select>
+                                    <div class="text-danger mt-2" *ngIf="motif.invalid && motif.touched">
+                                        <div *ngIf="motif.errors?.['required']" class="mt-2">Le champ motif est
+                                            obligatoire</div>
+                                    </div>
+                                </div>
+                                <div class="table-responsive mt-3">
+                                    <table class="table text-nowrap table-centered mt-0" style="width: 100%">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th class="pe-0">
+
+                                                </th>
+                                                <th class="ps-1">Nom & Prénom</th>
+                                                <th>Date de naissance</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let patient of filteredItems">
+                                                <td class="pe-0">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" [value]="patient"
+                                                            id="patient{{patient.id}}" name="patient{{patient.id}}"
+                                                            #patient="ngModel" [(ngModel)]="rdv.patient">
+                                                        <label class="form-check-label" for="patient{{patient.id}}">
+                                                        </label>
+                                                    </div>
+                                                </td>
+                                                <td class="ps-0">
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="../../assets/images/avatar/avatar-1.jpg" alt=""
+                                                            class="img-4by3-sm rounded-3">
+                                                        <div class="ms-3">
+                                                            <h5 class="mb-0">
+                                                                <a href="#!" class="text-inherit">{{patient.nom+"
+                                                                    "+patient.prenom}}</a>
+                                                            </h5>
+
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>{{patient.dateNaissance}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-12 mt-3">
+                                    <button class="btn btn-primary" type="submit"
+                                        [disabled]="f.invalid">Valider</button>
                                 </div>
                             </div>
-
-                            <button class="btn btn-success" [disabled]="f.invalid" type="submit">Save</button>
                         </form>
 
 
