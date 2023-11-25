@@ -157,5 +157,25 @@
         }
       ]
     }
+  ],
+  "alergie": [
+    {
+      "id": 1,
+      "nomAlergie": "Pollen"
+      
+    },
+    {
+      "id": 2,
+      "nomAlergie": "Acariens"
+    },
+    {
+      "id": 3,
+      "nomAlergie": "Moisissures"
+      
+    },
+    {
+      "id": 4,
+      "nomAlergie": "Poils d'animaux"
+    }
   ]
 }
