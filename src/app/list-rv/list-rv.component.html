@@ -50,9 +50,10 @@
                                         <td>{{rdv.date | date}}  {{rdv.heure}}</td>
                                         <td>{{rdv.motif}}</td>
                                         <td>
-                                            <span class="badge badge-success-soft" *ngIf="rdv.status==statuts[2]">{{rdv.status}}</span>
-                                            <span class="badge badge-warning-soft" *ngIf="rdv.status==statuts[1]">{{rdv.status}}</span>
-                                            <span class="badge badge-danger-soft" *ngIf="rdv.status==statuts[0]" >{{rdv.status}}</span>
+                                            <span class="badge badge-success-soft"  *ngIf="rdv.status==statuts[2]">{{rdv.status}}</span>
+                                            <span class="badge badge-warning-soft" (click)="setColutre(rdv)" *ngIf="rdv.status==statuts[1]">{{rdv.status}}</span>
+                                            <span class="badge badge-primary-soft" *ngIf="rdv.status==statuts[0] " (click)="setEnCours(rdv)" >{{rdv.status}}</span>
+                                            <span class="badge badge-danger-soft" *ngIf="rdv.status==statuts[3]" >{{rdv.status}}</span>
                                         </td>
                                         <td>
                                             <a *ngIf="rdv.status==statuts[0] || rdv.status==statuts[1]" 
@@ -62,7 +63,7 @@
                                                 <i class="fa fa-edit"></i>
                                                
                                             </a>
-                                            <a *ngIf="rdv.status==statuts[0] || rdv.status==statuts[1]"  (click)="deleteRDV(rdv.id)" class="btn btn-ghost btn-sm rounded-circle ">
+                                            <a *ngIf="rdv.status==statuts[0] || rdv.status==statuts[1]" title="Annuler"  (click)="deleteRDV(rdv)" class="btn btn-ghost btn-sm rounded-circle ">
                                                 <i class="fa-sharp fa-solid fa-trash"></i>
 
                                             </a>

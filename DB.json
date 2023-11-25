@@ -68,7 +68,7 @@
   ],
   "rendezvous": [
     {
-      "status": "En attente d'arrivée",
+      "status": "Annulé",
       "date": "2023-12-02",
       "heure": "16:07",
       "motif": "Une consultation de contrôle",
@@ -84,6 +84,24 @@
         "NumCnam": 12358
       },
       "id": 1
+    },
+    {
+      "status": "Clôture",
+      "date": "2023-12-04",
+      "heure": "10:10",
+      "motif": "Une consultation de contrôle",
+      "patient": {
+        "id": 1,
+        "nom": "Dupont",
+        "prenom": "Jean",
+        "dateNaissance": "1980-01-15",
+        "genre": "Homme",
+        "adresse": "123 Rue de la Santé",
+        "telephone": "0123456789",
+        "CNAM": true,
+        "NumCnam": 12358
+      },
+      "id": 2
     }
   ],
   "dossierMedical": [
