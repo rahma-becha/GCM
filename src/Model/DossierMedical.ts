@@ -8,8 +8,10 @@ export class DossierMedical {
     poids!: number;
     taille!: number;
     allergie!: boolean;
-    allergieDetails?: Alergie[];
-    traitements?: Traitement[];
+    prixPaye!:number;
+    prixRestant!:number;
+    allergieDetails!: Alergie[];
+    traitements!: Traitement[];
   }
   
   

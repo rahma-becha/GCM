@@ -42,6 +42,15 @@
       "NumCnam": "11555",
       "adresse": "adresse adresse",
       "id": 3
+    },
+    {
+      "nom": "P2",
+      "prenom": "P2",
+      "dateNaissance": "2013-01-30",
+      "telephone": "12345678",
+      "genre": "Homme",
+      "adresse": "adresse",
+      "id": 4
     }
   ],
   "medecin": [
@@ -125,7 +134,17 @@
   "dossierMedical": [
     {
       "id": 1,
-      "patientId": 1,
+      "patient": {
+        "id": 1,
+        "nom": "Dupont",
+        "prenom": "Jean",
+        "dateNaissance": "1980-01-15",
+        "genre": "Homme",
+        "adresse": "123 Rue de la Santé",
+        "telephone": "0123456789",
+        "CNAM": true,
+        "NumCnam": 12358
+      },
       "poids": 75,
       "taille": 180,
       "allergie": false,
@@ -133,8 +152,16 @@
         {
           "date": "2023-12-01",
           "medicament": [
-            "Aspirine",
-            "doliprane"
+            {
+              "id": 1,
+              "medicament": "Aspirine",
+              "nbrFois": 3
+            },
+            {
+              "id": 2,
+              "medicament": "doliprane",
+              "nbrFois": 3
+            }
           ],
           "analyse": null
         }
@@ -142,7 +169,17 @@
     },
     {
       "id": 2,
-      "patientId": 2,
+      "patient": {
+        "id": 2,
+        "nom": "Dupont",
+        "prenom": "Jean",
+        "dateNaissance": "1990-01-15",
+        "genre": "Homme",
+        "adresse": "123 Rue de la Santé",
+        "telephone": "987654321",
+        "CNAM": true,
+        "NumCnam": 87654
+      },
       "poids": 60,
       "taille": 165,
       "allergie": true,
@@ -162,7 +199,6 @@
     {
       "id": 1,
       "nomAlergie": "Pollen"
-      
     },
     {
       "id": 2,
@@ -171,7 +207,6 @@
     {
       "id": 3,
       "nomAlergie": "Moisissures"
-      
     },
     {
       "id": 4,

@@ -15,7 +15,7 @@ const routes: Routes = [
   {path:"patients/add",component:AddPatientComponent},
   {path:"rendez-vous",component:ListRVComponent},
   {path:"rendez-vous/add",component:AddRDVComponent},
-  {path:"patients/dossiermedicale",component:DossierMedicaleComponent},
+  {path:"patients/dossiermedicale/:id",component:DossierMedicaleComponent},
   {path:"patients/edit/:id",component:EditPatientComponent},
   {path:"rendez-vous/edit/:id",component:EditRDVComponent},
 

@@ -3,5 +3,5 @@ export class Analyse{
     id!:number;
     titreAnalyse!:string;   
     file!:File;
-    traitements?:Traitement[];
+    traitements!:Traitement[];
 }

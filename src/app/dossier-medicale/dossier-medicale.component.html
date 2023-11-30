@@ -9,222 +9,330 @@
     </div>
     <div>
         <!-- row -->
+        <form #f="ngForm" (ngSubmit)="submit()">
+                 {{dossierMedical|json}}
+            <div class="row">
+                <div class="col-lg-8 ">
+                    <!-- card -->
+                    <div class="card mb-4">
+                        <!-- card body -->
+                        <div class="card-body">
+                            <div class="row">
+                                <!-- input -->
+                                <div class="mb-3 col-md-12">
 
-        <div class="row">
-            <div class="col-lg-8 ">
-                <!-- card -->
-                <div class="card mb-4">
-                    <!-- card body -->
-                    <div class="card-body">
-                        <form class="row g-3 needs-validation" #f="ngForm" (ngSubmit)="submit()"></form>
-                        <div>
-                            <!-- input -->
-                            <div class="mb-3">
-                                <label class="form-label">Titre Traitement</label>
-                                <input type="text" class="form-control" placeholder="Enter Titre de traitement" [(ngModel)]="titre"
-                                    required>
-                            </div>
-                            <!-- input -->
-                            <div>
-                                <label for="textarea-input" class="form-label">Liste Medicament</label>
-                                <textarea class="form-control" id="textarea-input" rows="5" [(ngModel)]="medicament">...</textarea>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal-2">
-                                    Launch demo modal
-                                </button>
-                            </div>
-                        </div>
+                                    <label for="titre" class="form-label">Titre du Traitement <code>*</code></label>
+                                    <input type="text" class="form-control" id="titre" name="titre"
+                                        placeholder="Enter Titre de traitement" required #nomTrait="ngModel"
+                                        [(ngModel)]="treatement.titre">
+                                </div>
+                                <div class="mb-3 col-md-12">
+                                    <label class="form-label">Durée Traitement</label>
+                                    <input type="text" class="form-control" placeholder="Enter Durée de traitement"
+                                        [(ngModel)]="treatement.durre" #durre="ngModel" name="durre" required>
+                                </div>
+                                <!-- input -->
+                                <div class="col-md-12 float-end mb-2">
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal-2">
+                                        Ajouter un medicament
+                                    </button>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-striped">
+                                            <thead>
+                                                <th>Nom médicament</th>
+                                                <th>Nombre de fois</th>
+                                                <th>Action</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td> </td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                            </tbody>
 
-                    </div>
-
-                </div>
-
-           
-                <!-- card -->
-                <div class="card mb-4">
-                    <!-- card body -->
-                    <div class="card-body">
-                        <div>
-                            <!-- input -->
-                            <div class="mb-3">
-                                <label class="form-label">Titre d'analyse</label>
-                                <input type="text" class="form-control" placeholder="Enter Titre de traitement" [(ngModel)]="titreAnalyse"
-                                    required >
-                            </div>
-                            <!-- input -->
-                            <div>
-                                <label for="fileInput" class="form-label">Pièce jointe :</label>
-                                <input type="file" class="form-control" id="fileInput"
-                                    (change)="onFileSelected($event)">
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            
-                <!-- card -->
-                <div class="card mb-4">
-                    <!-- card body -->
-                    <div class="card-body">
-                        <div>
-                            <!-- input -->
-                            <div class="mb-3">
-                                <h3 class="mb-1">Historique</h3>
-                            </div>
-                            <!-- input -->
-                            <div>
-                                <div class="border p-4 rounded-3">
-                                    <!-- Titre de la session -->
-                                    <h5 class="mb-3 text-dark">Titre analyse 1</h5>
-                                  
-                                    <!-- Description de la session -->
-                                    <div class="mb-3">
-                                      <p class="mb-0">med1</p>
-                                      <p class="mb-0">med2</p>
-                                      <p class="mb-0">Titre analyse 1</p>
-                                      <p class="mb-0">Description d'analyse 1</p>
+                                        </table>
                                     </div>
-                                  </div>
-                                  <div class="border p-4 rounded-3">
-                                    <!-- Titre de la session -->
-                                    <h5 class="mb-3 text-dark">Titre analyse 1</h5>
-                                  
-                                    <!-- Description de la session -->
-                                    <div class="mb-3">
-                                      <p class="mb-0">med1</p>
-                                      <p class="mb-0">med2</p>
-                                      <p class="mb-0">Titre analyse 1</p>
-                                      <p class="mb-0">Description d'analyse 1</p>
-                                    </div>
-                                  </div>
-                                  
+
+                                </div>
                             </div>
-                            </div>
+
                         </div>
 
                     </div>
 
-                </div>
 
-            
-            <div class="col-lg-4 col-12">
+                    <!-- card -->
+                    <div class="card mb-4">
+                        <!-- card body -->
+                        <div class="card-body">
+                            <div>
+                                <div class="row">
 
-                <div class="card mb-4">
 
-                    <div class="card-body">
-                        <div>
-                            <div class="mb-3">
-                                <label class="form-label">Taille</label>
-                                <input type="text" class="form-control" placeholder="Enter Taille" [(ngModel)]="taille">
-                            </div>
+                                    <div class="col-md-12 float-end mb-2">
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#analyse">
+                                            Ajouter un anaylse
+                                        </button>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered table-striped">
+                                                <thead>
+                                                    <th>Nom d'anaylse</th>
+                                                    <th>Piece Jointe</th>
+                                                    <th>Action</th>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td> </td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
 
-                            <div class="mb-3">
-                                <label class="form-label">Poids</label>
-                                <input type="text" class="form-control" placeholder="Enter Poid" [(ngModel)]="poid">
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label" id="productSKU">Gender</label><br>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                        id="inlineRadio1" value="option1">
-                                    <label class="form-check-label" for="inlineRadio1">Male</label>
-                                </div>
-
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                        id="inlineRadio2" value="option2">
-                                    <label class="form-check-label" for="inlineRadio2">Female</label>
-                                </div>
-
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                        id="inlineRadio3" value="option2">
-                                    <label class="form-check-label" for="inlineRadio3">Kids</label>
+                                            </table>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+
                         </div>
-                        <div class="card mb-4">
 
-                            <div class="card-body">
+                    </div>
 
+
+                    <!-- card -->
+                    <div class="card mb-4">
+                        <!-- card body -->
+                        <div class="card-body">
+                            <div>
+                                <!-- input -->
                                 <div class="mb-3">
-                                    <div class="form-check form-switch mb-4">
-                                        <input class="form-check-input" type="checkbox" role="switch"
-                                            id="flexSwitchAlergie" checked>
-                                        <label class="form-check-label" for="flexSwitchAlergie">Alergie</label>
-                                    </div>
+                                    <h3 class="mb-1">Historique</h3>
                                 </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Nom Alergie</label>
-                                    <!-- alergie.component.html -->
-<div class="container mt-3">
-    <div class="row">
-      <div class="col-md-6">
-        
-                
-                <div *ngFor="let alergie of alergies" class="form-check">
-                  <input
-                    type="checkbox"
-                    class="form-check-input"
-                    [id]="alergie.id"
-                    [value]="alergie.nomAlergie"
-                    (change)="onCheckboxChange(alergie)"
-                    [checked]="selectedAlergies.includes(alergie.nomAlergie)"
-                  />
-                  <label class="form-check-label" [for]="alergie.id">{{ alergie.nomAlergie }}</label>
+                                <!-- input -->
+                                <div>
+                                    <div class="border p-4 rounded-3">
+                                        <!-- Titre de la session -->
+                                        <h5 class="mb-3 text-dark">Titre analyse 1</h5>
+
+                                        <!-- Description de la session -->
+                                        <div class="mb-3">
+                                            <p class="mb-0">med1</p>
+                                            <p class="mb-0">med2</p>
+                                            <p class="mb-0">Titre analyse 1</p>
+                                            <p class="mb-0">Description d'analyse 1</p>
+                                        </div>
+                                    </div>
+                                    <div class="border p-4 rounded-3">
+                                        <!-- Titre de la session -->
+                                        <h5 class="mb-3 text-dark">Titre analyse 1</h5>
+
+                                        <!-- Description de la session -->
+                                        <div class="mb-3">
+                                            <p class="mb-0">med1</p>
+                                            <p class="mb-0">med2</p>
+                                            <p class="mb-0">Titre analyse 1</p>
+                                            <p class="mb-0">Description d'analyse 1</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
                 </div>
-              </div>
-            </div>
-            </div>
-  
+
+
+                <div class="col-lg-4 col-12">
+
+                    <div class="card mb-4">
+
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="mb-3 col-md-12">
+                                    <label class="form-label">Taille</label>
+                                    <input type="text" class="form-control" placeholder="Enter Taille" name="taille"
+                                        [(ngModel)]="dossierMedical.taille">
+                                </div>
+
+                                <div class="mb-3 col-md-12">
+                                    <label class="form-label">Poids</label>
+                                    <input type="text" class="form-control" placeholder="Enter Poids" name="poids"  [(ngModel)]="dossierMedical.poids">
+                                </div>
+                                <div class="mb-3 col-md-12">
+                                    <label class="form-label">Date de naissance</label>
+                                    <input type="date" class="form-control" readonly [(ngModel)]="patient.dateNaissance">
+                                </div>
+                                <div class="mb-3 col-md-12">
+                                    <label class="form-label" id="productSKU">Genre</label><br>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                            id="inlineRadio1" value="option1">
+                                        <label class="form-check-label" for="inlineRadio1">Homme</label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                            id="inlineRadio2" value="option2">
+                                        <label class="form-check-label" for="inlineRadio2">Femme</label>
+                                    </div>
+
+                                    
+                                </div>
+                            </div>
+                            <div class="card mb-4 col-md-12">
+
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="mb-3 col-md-12">
+                                            <div class="form-check form-switch mb-4">
+                                                <input class="form-check-input" type="checkbox" role="switch"
+                                                    id="flexSwitchAlergie" checked>
+                                                <label class="form-check-label" for="flexSwitchAlergie">Alergie</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3 col-md-12">
+                                            <label class="form-label">Nom Alergie</label>
+                                            <!-- alergie.component.html -->
+                                            <div class="container mt-3">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+
+
+                                                        <div *ngFor="let alergie of alergies" class="form-check mb-2">
+                                                            <input type="checkbox" class="form-check-input"
+                                                                name="allergies"
+                                                                [id]="alergie.id" [value]="alergie.nomAlergie"
+                                                                (change)="onCheckboxChange(alergie)"
+                                                                [checked]="selectedAlergies.includes(alergie.nomAlergie)" />
+                                                            <label class="form-check-label" [for]="alergie.id">{{
+                                                                alergie.nomAlergie }}</label>
+
+                                                        </div>
+
+                                                        <div class="form-check">
+                                                            <input type="checkbox" class="form-check-input" name="autre"
+                                                                [(ngModel)]="autre" value="true" />
+                                                            <label class="form-check-label" for="autre">Autre</label>
+                                                        </div>
+                                                        <div class="mb-3 col-md-12" *ngIf="autre">
+                                                            <label class="form-label">Autre Allergies</label>
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Autre Allergies"
+                                                                [(ngModel)]="autreAllergies">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="card mb-4">
-                    <!-- card body -->
-                    <div class="card-body">
-                        <!-- input -->
-                        <div class="mb-3">
-                            <label class="form-label">prix payée</label>
-                            <input type="text" class="form-control" placeholder="$ 49.00">
-                        </div>
-                        <!-- input -->
-                        <div class="mb-3">
-                            <label class="form-label">prix Restant</label>
-                            <label class="form-label form-control">Le prix Restant est : 100 dt</label>
-                        </div>
-                        <div class="d-grid">
-                            <button class="btn btn-primary" type="submit"
-                                        [disabled]="f.invalid">Valider</button>
-                        </div>
+                    <div class="card mb-4">
+                        <!-- card body -->
+                        <div class="card-body">
+                            <!-- input -->
+                            <div class="mb-3">
+                                <label class="form-label">prix payée</label>
+                                <input type="text" class="form-control" placeholder="$ 49.00">
+                            </div>
+                            <!-- input -->
+                            <div class="mb-3">
+                                <label class="form-label">prix Restant</label>
+                                <label class="form-label form-control">Le prix Restant est : 100 dt</label>
+                            </div>
+                            <div class="d-grid">
+                                <button class="btn btn-primary" type="submit" [disabled]="f.invalid">Valider</button>
+                            </div>
 
+                        </div>
                     </div>
                 </div>
-            </div>
 
-        </div>
+            </div>
+        </form>
     </div>
 
 
-<div class="modal fade" id="exampleModal-2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleModal-2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Ajouter un medicament</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    ...
+                    <div class="row">
+                        <div class="mb-3 col-md-12">
+                            <label class="form-label">Nom du medicament</label>
+                            <input type="text" class="form-control" placeholder="Enter Nom du médicament"
+                                [(ngModel)]="titre" required>
+                        </div>
+                        <div class="mb-3 col-md-12">
+                            <label class="form-label">Nombre de fois</label>
+                            <input type="text" class="form-control" placeholder="Enter le nombre de fois"
+                                [(ngModel)]="titre" required>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-primary">Valider</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Modal Analyse-->
+
+
+
+    <div class="modal fade" id="analyse" tabindex="-1" role="dialog" aria-labelledby="exampleModalAnalyse"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalAnalyse">Ajouter un analyse</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+
+                        <!-- input -->
+                        <div class="mb-3">
+                            <label class="form-label">Titre d'analyse</label>
+                            <input type="text" class="form-control" placeholder="Enter Titre de traitement"
+                                [(ngModel)]="titreAnalyse" required>
+                        </div>
+                        <!-- input -->
+                        <div>
+                            <label for="fileInput" class="form-label">Pièce jointe :</label>
+                            <input type="file" class="form-control" id="fileInput" (change)="onFileSelected($event)">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-primary">Valider</button>
                 </div>
             </div>
         </div>
