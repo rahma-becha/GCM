@@ -7,6 +7,10 @@ import { AlergieService } from 'src/services/alergie.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PatientService } from 'src/services/patient.service';
 import { DossierMedicalService } from 'src/services/dossier-medicale.service';
+import { AnalyseService } from 'src/services/analyse.service';
+import { MedicamentService } from 'src/services/medicament.service';
+import { Analyse } from 'src/Model/Analyse';
+import { Medicament } from 'src/Model/Medicament';
 @Component({
   selector: 'app-dossier-medicale',
   templateUrl: './dossier-medicale.component.html',
@@ -27,6 +31,8 @@ export class DossierMedicaleComponent implements OnInit  {
   autreAllergies=""
   id:number=0;
   dm:DossierMedical[]=[]
+  analyses:Analyse[]=[]
+  medicaments:Medicament[]=[]
 submit() {
 throw new Error('Method not implemented.');
 }
@@ -38,7 +44,7 @@ throw new Error('Method not implemented.');
 
  
 
-  constructor(private alergieService: AlergieService,private activatedRouter:ActivatedRoute,private patientService:PatientService,private dossierMedicalService:DossierMedicalService) {
+  constructor(private alergieService: AlergieService,private activatedRouter:ActivatedRoute,private patientService:PatientService,private dossierMedicalService:DossierMedicalService,private analyseService:AnalyseService,private medicamentService:MedicamentService) {
     this.id=this.activatedRouter.snapshot.params['id']
 
   }
@@ -47,13 +53,8 @@ throw new Error('Method not implemented.');
     this.getAllergies()
     this.getPatient()
     this.getDossierMedical()
-    this.dm.forEach((item:DossierMedical)=>{
-      if(item.patient.id==this.id){
-        this.dossierMedical=item
-      }
-    })
-  //  this.dossierMedical != this.dm.find(item => item.patient.id == this.id);
-    
+   this.getAllAnalyses();
+   this.getAllMedicaments()    
   }
 
   onCheckboxChange(alergie: Alergie) {
@@ -79,13 +80,28 @@ throw new Error('Method not implemented.');
 
   getDossierMedical() {
     this.dossierMedicalService.getDossiersMedicaux().subscribe((data) => {
-     // this.dm = data;
-     
-      this.dossierMedical!=data.find((item=>{item.patient.id==this.id}))
-      // Utilisation de find pour récupérer le dossier médical correspondant à l'id du patient
-  
-      // Affichage du dossier médical trouvé dans la console
+     this.dm = data;
+      this.getDossierMedicalPatient()
+      
     });
 
+  }
+  getDossierMedicalPatient(){
+      for(const item of this.dm){
+        if(item.patient.id==this.id){
+          this.dossierMedical=item
+        }
+      }
+  }
+  getAllAnalyses(){
+    this.analyseService.getAllAnalyses().subscribe((data)=>{
+      this.analyses=data
+    })
+  }
+
+  getAllMedicaments(){
+    this.medicamentService.getAllMedicaments().subscribe((data)=>{
+      this.medicaments=data
+    })
   }
 }

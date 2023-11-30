@@ -10,7 +10,6 @@
     <div>
         <!-- row -->
         <form #f="ngForm" (ngSubmit)="submit()">
-                 {{dossierMedical|json}}
             <div class="row">
                 <div class="col-lg-8 ">
                     <!-- card -->
@@ -32,53 +31,66 @@
                                         [(ngModel)]="treatement.durre" #durre="ngModel" name="durre" required>
                                 </div>
                                 <!-- input -->
-                                <div class="col-md-12 float-end mb-2">
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal-2">
-                                        Ajouter un medicament
-                                    </button>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="table-responsive">
-                                        <table class="table table-bordered table-striped">
-                                            <thead>
-                                                <th>Nom médicament</th>
-                                                <th>Nombre de fois</th>
-                                                <th>Action</th>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td> </td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
-                                            </tbody>
 
-                                        </table>
-                                    </div>
-
-                                </div>
                             </div>
 
                         </div>
 
                     </div>
 
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <div class="float-end">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal-2">
+                                    Ajouter un medicament
+                                </button>
+                            </div>
+
+                        </div>
+                        <div class="card-body">
+
+                            <div class="col-md-12">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-striped">
+                                        <thead>
+                                            <th>Nom médicament</th>
+                                            <th>Nombre de fois</th>
+                                            <th>Action</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td> </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
 
                     <!-- card -->
                     <div class="card mb-4">
+                        <div class="card-hearder m-3">
+                            <div class="float-end">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#analyse">
+                                    Ajouter un anaylse
+                                </button>
+                            </div>
+                        </div>
                         <!-- card body -->
                         <div class="card-body">
                             <div>
+
                                 <div class="row">
 
 
-                                    <div class="col-md-12 float-end mb-2">
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                            data-bs-target="#analyse">
-                                            Ajouter un anaylse
-                                        </button>
-                                    </div>
+
                                     <div class="col-md-12">
                                         <div class="table-responsive">
                                             <table class="table table-bordered table-striped">
@@ -117,30 +129,25 @@
                                 </div>
                                 <!-- input -->
                                 <div>
-                                    <div class="border p-4 rounded-3">
-                                        <!-- Titre de la session -->
-                                        <h5 class="mb-3 text-dark">Titre analyse 1</h5>
+                                    <div *ngFor="let itemT of dossierMedical.traitements">
+                                        <div class="border p-4 rounded-3">
+                                            <!-- Titre de la session -->
+                                            <h4 class="mb-3 text-dark">{{itemT.titre}}</h4>
+                                            <h5>{{itemT.date | date:'dd/MM/yyyy'}} ({{itemT.durre}})</h5>
+                                            <!-- Description de la session -->
+                                            <h5>Medicament</h5>
+                                            <div class="mb-1" *ngFor="let med of itemT.medicament">
+                                                <p class="mb-0">{{med.medicament}} ({{med.nbrFois}})</p>
 
-                                        <!-- Description de la session -->
-                                        <div class="mb-3">
-                                            <p class="mb-0">med1</p>
-                                            <p class="mb-0">med2</p>
-                                            <p class="mb-0">Titre analyse 1</p>
-                                            <p class="mb-0">Description d'analyse 1</p>
+                                            </div>
+                                            <h5 *ngIf="itemT.analyse">Analyse</h5>
+                                            <div class="mb-1" *ngFor="let a of itemT.analyse">
+                                                <p class="mb-0">{{a.titreAnalyse}} </p>
+
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="border p-4 rounded-3">
-                                        <!-- Titre de la session -->
-                                        <h5 class="mb-3 text-dark">Titre analyse 1</h5>
 
-                                        <!-- Description de la session -->
-                                        <div class="mb-3">
-                                            <p class="mb-0">med1</p>
-                                            <p class="mb-0">med2</p>
-                                            <p class="mb-0">Titre analyse 1</p>
-                                            <p class="mb-0">Description d'analyse 1</p>
-                                        </div>
-                                    </div>
 
                                 </div>
                             </div>
@@ -165,27 +172,32 @@
 
                                 <div class="mb-3 col-md-12">
                                     <label class="form-label">Poids</label>
-                                    <input type="text" class="form-control" placeholder="Enter Poids" name="poids"  [(ngModel)]="dossierMedical.poids">
+                                    <input type="text" class="form-control" placeholder="Enter Poids" name="poids"
+                                        [(ngModel)]="dossierMedical.poids">
                                 </div>
                                 <div class="mb-3 col-md-12">
                                     <label class="form-label">Date de naissance</label>
-                                    <input type="date" class="form-control" readonly [(ngModel)]="patient.dateNaissance">
+                                    <input type="date" class="form-control" name="dateNaissance" readonly
+                                        [(ngModel)]="patient.dateNaissance">
                                 </div>
                                 <div class="mb-3 col-md-12">
                                     <label class="form-label" id="productSKU">Genre</label><br>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio1" value="option1">
-                                        <label class="form-check-label" for="inlineRadio1">Homme</label>
+                                    <div class="form-check  form-check-inline">
+                                        <input class="form-check-input" type="radio" value="Homme" name="genre"
+                                            #genre="ngModel" [(ngModel)]="patient.genre" id="homme">
+                                        <label class="form-check-label" for="homme">
+                                            Homme
+                                        </label>
+                                    </div>
+                                    <div class="form-check  form-check-inline">
+                                        <input class="form-check-input" type="radio" value="Femme" name="genre"
+                                            #genre="ngModel" [(ngModel)]="patient.genre" id="femme">
+                                        <label class="form-check-label" for="femme">
+                                            Femme
+                                        </label>
                                     </div>
 
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio2" value="option2">
-                                        <label class="form-check-label" for="inlineRadio2">Femme</label>
-                                    </div>
 
-                                    
                                 </div>
                             </div>
                             <div class="card mb-4 col-md-12">
@@ -210,8 +222,8 @@
 
                                                         <div *ngFor="let alergie of alergies" class="form-check mb-2">
                                                             <input type="checkbox" class="form-check-input"
-                                                                name="allergies"
-                                                                [id]="alergie.id" [value]="alergie.nomAlergie"
+                                                                name="allergies" [id]="alergie.id"
+                                                                [value]="alergie.nomAlergie"
                                                                 (change)="onCheckboxChange(alergie)"
                                                                 [checked]="selectedAlergies.includes(alergie.nomAlergie)" />
                                                             <label class="form-check-label" [for]="alergie.id">{{
@@ -279,10 +291,14 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="mb-3 col-md-12">
-                            <label class="form-label">Nom du medicament</label>
-                            <input type="text" class="form-control" placeholder="Enter Nom du médicament"
-                                [(ngModel)]="titre" required>
+
+                        <div class="col-md-12 mb-3">
+                            <label for="statutSelect" class="form-label">Nom du medicament</label>
+                            <select class="form-select" id="statutSelect" required>
+                                <option value="" selected>Choisir un medicament</option>
+                                <option *ngFor="let item of medicaments" [value]="item.id">{{ item.medicament}}</option>
+                            </select>
+
                         </div>
                         <div class="mb-3 col-md-12">
                             <label class="form-label">Nombre de fois</label>
@@ -317,11 +333,14 @@
                 <div class="modal-body">
                     <div class="row">
 
-                        <!-- input -->
-                        <div class="mb-3">
-                            <label class="form-label">Titre d'analyse</label>
-                            <input type="text" class="form-control" placeholder="Enter Titre de traitement"
-                                [(ngModel)]="titreAnalyse" required>
+
+                        <div class="col-md-12 mb-3">
+                            <label for="statutSelect" class="form-label">Titre d'analyse :</label>
+                            <select class="form-select" id="statutSelect" required>
+                                <option value="" selected>Choisir un analyse</option>
+                                <option *ngFor="let item of analyses" [value]="item.id">{{ item.titreAnalyse}}</option>
+                            </select>
+
                         </div>
                         <!-- input -->
                         <div>

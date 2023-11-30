@@ -151,6 +151,8 @@
       "traitements": [
         {
           "date": "2023-12-01",
+          "titre":"titre traitement",
+          "durre":"6 mois",
           "medicament": [
             {
               "id": 1,
@@ -188,6 +190,8 @@
       ],
       "traitements": [
         {
+          "titre":"titre traitement",
+          "durre":"6 mois",
           "date": "2023-12-02",
           "medicament": null,
           "analyse": "Dermatographie"
@@ -211,6 +215,32 @@
     {
       "id": 4,
       "nomAlergie": "Poils d'animaux"
+    }
+  ],
+  "analyses":[
+    {
+      "id":"1","titreAnalyse":"Hémogramme complet (FSC)"
+    },
+    {
+      "id":"2","titreAnalyse":"Bilan lipidique"
+    },
+    {
+      "id":"2","titreAnalyse":"Tests de la fonction hépatique"
+    },
+    {
+      "id":"2","titreAnalyse":"Tests de la fonction rénale"
+    }
+  ],
+  "medicaments":[
+    {
+      "id": 1,
+      "medicament": "Aspirine",
+      "nbrFois": 3
+    },
+    {
+      "id": 2,
+      "medicament": "doliprane",
+      "nbrFois": 3
     }
   ]
 }

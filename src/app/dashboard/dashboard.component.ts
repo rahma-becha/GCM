@@ -17,11 +17,8 @@ export class DashboardComponent implements OnInit{
   dateAujourdhui: Date = new Date(); 
   constructor(private patientService: PatientService,private rendezvousService:RendezvousService) {}
     ngOnInit(): void {
-      this.patientService.getPatients();
       this.nombrePtaient();
-      this.rendezvousService.getRendezvous();
       this.calculNbRDV();
-      this.dateAujourdhui;
     }
 
     nombrePtaient(){
