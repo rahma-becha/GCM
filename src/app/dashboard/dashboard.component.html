@@ -17,7 +17,7 @@
 
             </div>
             <div class="mt-4 mb-3 d-flex align-items-center lh-1">
-              <h3 class="fw-bold  mb-0">5,312</h3>
+              <h3 class="fw-bold  mb-0">{{nombrePatients}}</h3>
             </div>
           </div>
         </div>
@@ -31,7 +31,7 @@
 
             </div>
             <div class="mt-4 mb-3 d-flex align-items-center lh-1">
-              <h3 class="fw-bold  mb-0">$8,312</h3>
+              <h3 class="fw-bold  mb-0">{{nombreRendezVousEnAttente}}</h3>
             </div>
           </div>
         </div>
@@ -45,7 +45,7 @@
 
             </div>
             <div class="mt-4 mb-3 d-flex align-items-center lh-1">
-              <h3 class="fw-bold  mb-0">$15,312</h3>
+              <h3 class="fw-bold  mb-0">{{dateAujourdhui | date:'dd/MM/yyyy'}}</h3>
             </div>
           </div>
         </div>
@@ -54,12 +54,12 @@
         <div class="card h-100 card-lift">
           <div class="card-body">
             <div class="d-flex justify-content-between align-items-center">
-              <span class="text-muted fw-semi-bold ">Balance</span>
+              <span class="text-muted fw-semi-bold ">Heure</span>
               <span><i data-feather="credit-card" class="text-info"></i></span>
 
             </div>
             <div class="mt-4 mb-3 d-flex align-items-center lh-1">
-              <h3 class="fw-bold  mb-0">$35.64k</h3>
+              <h3 class="fw-bold  mb-0">{{dateAujourdhui | date:'HH:mm'}}</h3>
 
             </div>
           </div>
