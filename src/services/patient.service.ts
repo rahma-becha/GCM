@@ -16,7 +16,7 @@ export class PatientService {
   getPatients(): Observable<Patient[]> {
     return this.http.get<Patient[]>(this.apiUrl);
   }
-
+  
   
   getPatientById(id: number): Observable<Patient> {
     const url = `${this.apiUrl}/${id}`;
