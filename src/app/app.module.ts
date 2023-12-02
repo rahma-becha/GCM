@@ -18,6 +18,7 @@ import { AddRDVComponent } from './add-rdv/add-rdv.component';
 import { DossierMedicaleComponent } from './dossier-medicale/dossier-medicale.component';
 import { EditPatientComponent } from './edit-patient/edit-patient.component';
 import { EditRDVComponent } from './edit-rdv/edit-rdv.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { EditRDVComponent } from './edit-rdv/edit-rdv.component';
     AddRDVComponent,
     DossierMedicaleComponent,
     EditPatientComponent,
-    EditRDVComponent
+    EditRDVComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
