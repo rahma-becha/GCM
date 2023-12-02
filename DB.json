@@ -68,8 +68,8 @@
       "id": 2,
       "nom": "secretaire",
       
-      "email": "Dubois@gmail.com",
-      "password": "Dubois123",
+      "email": "secretaire@gmail.com",
+      "password": "secretaire123",
       "role": "secretaire"
     }
   ],

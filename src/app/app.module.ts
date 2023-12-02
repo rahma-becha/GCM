@@ -4,36 +4,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { SideBarComponent } from './components/side-bar/side-bar.component';
-import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { ListPatientsComponent } from './list-patients/list-patients.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { ListRVComponent } from './list-rv/list-rv.component';
-import { PatientService } from 'src/services/patient.service';
-import { RendezvousService } from 'src/services/rendrezvous.service';
-import { AddPatientComponent } from './add-patient/add-patient.component';
+
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
-import { AddRDVComponent } from './add-rdv/add-rdv.component';
-import { DossierMedicaleComponent } from './dossier-medicale/dossier-medicale.component';
-import { EditPatientComponent } from './edit-patient/edit-patient.component';
-import { EditRDVComponent } from './edit-rdv/edit-rdv.component';
+
 import { LoginComponent } from './login/login.component';
+import { AdminComponent } from './admin/admin.component';
+import { SideBarComponent } from './components/side-bar/side-bar.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    LoginComponent,
+    AdminComponent,
     SideBarComponent,
-    NavBarComponent,
-    DashboardComponent, 
-    ListPatientsComponent,
-    ListRVComponent,
-    AddPatientComponent,
-    AddRDVComponent,
-    DossierMedicaleComponent,
-    EditPatientComponent,
-    EditRDVComponent,
-    LoginComponent
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -44,8 +30,6 @@ import { LoginComponent } from './login/login.component';
   ],
   providers: [
     HttpClient,
-    PatientService,
-    RendezvousService
   ],
   bootstrap: [AppComponent]
 })

@@ -14,7 +14,7 @@ export class AddPatientComponent {
    constructor(private patientService:PatientService,private router:Router){}
    submit(){
     this.patientService.addPatient(this.patient).subscribe((data)=>{
-      this.router.navigate(["/patients"]);
+      this.router.navigate(["/admin/patients"]);
     }) 
    }
 }

@@ -20,18 +20,17 @@
                             <p class="mb-6">Please enter your user information.</p>
                         </div>
                         <!-- Form -->
-                        <form>
                             <!-- Username -->
                             <div class="mb-3">
                                 <label for="email" class="form-label">Username or email</label>
                                 <input type="email" id="email" class="form-control" name="email"
-                                    placeholder="Email address here" ngModel required>
+                                    placeholder="Email address here" #e="ngModel" [(ngModel)]="email" required>
                             </div>
                             <!-- Password -->
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
                                 <input type="password" id="password" class="form-control" name="password"
-                                    placeholder="**************" ngModel required>
+                                    placeholder="**************" #p="ngModel" [(ngModel)]="password" required>
                             </div>
                             <!-- Checkbox -->
                             <div class="d-lg-flex justify-content-between align-items-center
@@ -64,7 +63,6 @@
                             </div>
 
 
-                        </form>
                     </div>
                 </div>
             </div>

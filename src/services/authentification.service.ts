@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, catchError, map } from 'rxjs';
+import { Observable, catchError, map,filter } from 'rxjs';
 import { User } from 'src/Model/User';
 
 @Injectable({
@@ -13,12 +13,8 @@ export class AuthentificationService {
   constructor(private http: HttpClient) {}
 
   // Méthode pour vérifier les informations d'identification
-  authenticate(email: string, password: string): Observable<User | null> {
-    return this.http.get<User[]>(`${this.apiUrl}/users?email=${email}&password=${password}`)
-      .pipe(
-        map(users => users.length > 0 ? users[0] : null),
-        
-      );
+  authenticate(): Observable<User[]> {
+    return this.http.get<User[]>(this.apiUrl)
   }
 
   // Méthode pour récupérer le rôle de l'utilisateur
