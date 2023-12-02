@@ -1,7 +1,6 @@
-import { Traitement } from "./Traitement";
+import { AnalyseTraitement } from "./AnalyseTraitement";
 export class Analyse{
     id!:number;
     titreAnalyse!:string;   
-    file!:File;
-    traitements!:Traitement[];
+    analyseTraitements!:AnalyseTraitement[];
 }

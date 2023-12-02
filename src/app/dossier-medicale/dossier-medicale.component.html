@@ -59,10 +59,15 @@
                                             <th>Action</th>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td> </td>
-                                                <td></td>
-                                                <td></td>
+                                            <tr *ngIf="treatement.medicamentTrairements.length==0">
+                                                <td colspan="3" class="text-center">Pas de medicament</td>
+                                            </tr>
+                                            <tr *ngFor="let med of treatement.medicamentTrairements">
+                                                <td>{{med.medicament.medicament}} </td>
+                                                <td>{{med.nbrFois}}</td>
+                                                <td>
+                                                    <button class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip text-danger" (click)="deleteMed(med)"><i class="fa fa-trash"></i></button>
+                                                </td>
                                             </tr>
                                         </tbody>
 
@@ -100,10 +105,15 @@
                                                     <th>Action</th>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <td> </td>
-                                                        <td></td>
-                                                        <td></td>
+                                                    <tr *ngFor="let analyse of treatement.analyseTraitements">
+                                                        <td>{{analyse.analyse.titreAnalyse}}</td>
+                                                        <td>{{analyse.file}}</td>
+                                                        <td>
+                                                            <button class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip text-danger" (click)="deleteAnalyse(analyse)"><i class="fa fa-trash"></i></button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr *ngIf="treatement.analyseTraitements.length==0">
+                                                        <td colspan="3" class="text-center">Pas d'analyse</td>
                                                     </tr>
                                                 </tbody>
 
@@ -136,13 +146,13 @@
                                             <h5>{{itemT.date | date:'dd/MM/yyyy'}} ({{itemT.durre}})</h5>
                                             <!-- Description de la session -->
                                             <h5>Medicament</h5>
-                                            <div class="mb-1" *ngFor="let med of itemT.medicament">
-                                                <p class="mb-0">{{med.medicament}} ({{med.nbrFois}})</p>
+                                            <div class="mb-1" *ngFor="let med of itemT.medicamentTrairements">
+                                                <p class="mb-0">{{med.medicament.medicament}} ({{med.nbrFois}})</p>
 
                                             </div>
-                                            <h5 *ngIf="itemT.analyse">Analyse</h5>
-                                            <div class="mb-1" *ngFor="let a of itemT.analyse">
-                                                <p class="mb-0">{{a.titreAnalyse}} </p>
+                                            <h5 *ngIf="itemT.analyseTraitements">Analyse</h5>
+                                            <div class="mb-1" *ngFor="let a of itemT.analyseTraitements">
+                                                <p class="mb-0">{{a.analyse.titreAnalyse}}
 
                                             </div>
                                         </div>
@@ -225,7 +235,7 @@
                                                                 name="allergies" [id]="alergie.id"
                                                                 [value]="alergie.nomAlergie"
                                                                 (change)="onCheckboxChange(alergie)"
-                                                                [checked]="selectedAlergies.includes(alergie.nomAlergie)" />
+                                                                [checked]="selectedAlergies.includes(alergie)" />
                                                             <label class="form-check-label" [for]="alergie.id">{{
                                                                 alergie.nomAlergie }}</label>
 
@@ -294,22 +304,22 @@
 
                         <div class="col-md-12 mb-3">
                             <label for="statutSelect" class="form-label">Nom du medicament</label>
-                            <select class="form-select" id="statutSelect" required>
-                                <option value="" selected>Choisir un medicament</option>
-                                <option *ngFor="let item of medicaments" [value]="item.id">{{ item.medicament}}</option>
+                            <select class="form-select" id="statutSelect" required [(ngModel)]="selectedMedicament" >
+                                <option value="" selected >Choisir un medicament</option>
+                                <option *ngFor="let item of medicaments" [ngValue]="item">{{ item.medicament}}</option>
                             </select>
 
                         </div>
                         <div class="mb-3 col-md-12">
                             <label class="form-label">Nombre de fois</label>
                             <input type="text" class="form-control" placeholder="Enter le nombre de fois"
-                                [(ngModel)]="titre" required>
+                                [(ngModel)]="nbrFois">
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                    <button type="button" class="btn btn-primary">Valider</button>
+                    <button type="button" class="btn btn-primary" (click)="saveMedicament()">Valider</button>
                 </div>
             </div>
         </div>
@@ -336,9 +346,9 @@
 
                         <div class="col-md-12 mb-3">
                             <label for="statutSelect" class="form-label">Titre d'analyse :</label>
-                            <select class="form-select" id="statutSelect" required>
+                            <select class="form-select" id="statutSelect" required [(ngModel)]="selectedAnalyse">
                                 <option value="" selected>Choisir un analyse</option>
-                                <option *ngFor="let item of analyses" [value]="item.id">{{ item.titreAnalyse}}</option>
+                                <option *ngFor="let item of analyses" [ngValue]="item">{{ item.titreAnalyse}}</option>
                             </select>
 
                         </div>
@@ -351,7 +361,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                    <button type="button" class="btn btn-primary">Valider</button>
+                    <button type="button" class="btn btn-primary" (click)="saveAnalyse()">Valider</button>
                 </div>
             </div>
         </div>

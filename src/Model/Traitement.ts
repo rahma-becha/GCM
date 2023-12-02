@@ -1,11 +1,11 @@
 import { DossierMedical } from "./DossierMedical";
-import { Medicament } from "./Medicament";
-import { Analyse } from "./Analyse";
+import { AnalyseTraitement } from "./AnalyseTraitement";
+import { MedicamentTraitement } from "./MedicamentTraitement";
 export class Traitement {
     titre!:string
     date!: string;
     durre!:string;
-    medicament!: Medicament[] | null;
-    analyse!: Analyse[] | null;
+    medicamentTrairements:MedicamentTraitement[]=[]
+    analyseTraitements:AnalyseTraitement[]=[];
     dossierMedicale!:DossierMedical
   }

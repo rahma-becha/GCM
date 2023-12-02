@@ -11,6 +11,8 @@ import { AnalyseService } from 'src/services/analyse.service';
 import { MedicamentService } from 'src/services/medicament.service';
 import { Analyse } from 'src/Model/Analyse';
 import { Medicament } from 'src/Model/Medicament';
+import { MedicamentTraitement } from 'src/Model/MedicamentTraitement';
+import { AnalyseTraitement } from 'src/Model/AnalyseTraitement';
 @Component({
   selector: 'app-dossier-medicale',
   templateUrl: './dossier-medicale.component.html',
@@ -26,13 +28,16 @@ export class DossierMedicaleComponent implements OnInit  {
   taille:String="";
   poid:String="";
   alergies: Alergie[] = [];
-  selectedAlergies: string[] = [];
+  selectedAlergies: Alergie[] = [];
   autre:boolean=false
   autreAllergies=""
   id:number=0;
   dm:DossierMedical[]=[]
   analyses:Analyse[]=[]
   medicaments:Medicament[]=[]
+  selectedMedicament!:Medicament;
+  selectedAnalyse!:Analyse;
+  nbrFois!:number
 submit() {
 throw new Error('Method not implemented.');
 }
@@ -59,11 +64,13 @@ throw new Error('Method not implemented.');
 
   onCheckboxChange(alergie: Alergie) {
     // Ajoute ou supprime la valeur sélectionnée du tableau selectedAlergies
-    if (this.selectedAlergies.includes(alergie.nomAlergie)) {
-      this.selectedAlergies = this.selectedAlergies.filter((item) => item !== alergie.nomAlergie);
+    if (this.selectedAlergies.includes(alergie)) {
+      this.selectedAlergies = this.selectedAlergies.filter((item) => item.nomAlergie !== alergie.nomAlergie);
     } else {
-      this.selectedAlergies.push(alergie.nomAlergie);
+      this.selectedAlergies.push(alergie);
     }
+    this.dossierMedical.allergieDetails=this.selectedAlergies
+    console.log(this.dossierMedical.allergieDetails)
   }
   getAllergies(){
     this.alergieService.getAlergies().subscribe((data) => {
@@ -103,5 +110,27 @@ throw new Error('Method not implemented.');
     this.medicamentService.getAllMedicaments().subscribe((data)=>{
       this.medicaments=data
     })
+  }
+  saveMedicament(){
+    let mt=new MedicamentTraitement();
+    mt.medicament=this.selectedMedicament;
+    mt.nbrFois=this.nbrFois
+    this.treatement.medicamentTrairements.push(mt)
+    this.selectedMedicament=new Medicament();
+    this.nbrFois=0
+  }
+
+  saveAnalyse(){
+    let analyse=new AnalyseTraitement();
+    analyse.analyse=this.selectedAnalyse;
+    this.treatement.analyseTraitements.push(analyse)
+    this.selectedAnalyse=new Analyse()
+  }
+
+  deleteMed(med:MedicamentTraitement){
+    this.treatement.medicamentTrairements.splice(this.treatement.medicamentTrairements.indexOf(med),1)
+  }
+  deleteAnalyse(analyse:AnalyseTraitement){
+    this.treatement.analyseTraitements.splice(this.treatement.analyseTraitements.indexOf(analyse),1)
   }
 }
