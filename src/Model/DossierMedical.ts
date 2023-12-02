@@ -10,8 +10,8 @@ export class DossierMedical {
     allergie!: boolean;
     prixPaye!:number;
     prixRestant!:number;
-    allergieDetails!: Alergie[];
-    traitements!: Traitement[];
+    allergieDetails: Alergie[]=[];
+    traitements: Traitement[]=[];
   }
   
   

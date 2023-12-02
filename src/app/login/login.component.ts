@@ -17,7 +17,8 @@ export class LoginComponent {
 
   login() {
     this.authService.authenticate().subscribe(users => {
-       users=users
+       this.users=users
+       
        this.verifyCridentials()
     });
   }
@@ -30,21 +31,19 @@ export class LoginComponent {
     return undefined
   }
   verifyCridentials(){
-    let user:User|undefined=this.getUser()
-    console.log(user)
-    if (user) {
+    for(const item of this.users){
+      if(item.email==this.email && item.password==this.password){
+        this.user=item
+      }
+    }
+    if (this.user) {
       // Authentification réussie
       // Stocker l'utilisateur dans le stockage local si nécessaire
-      localStorage.setItem('currentUser', JSON.stringify(user));
+      localStorage.setItem('currentUser', JSON.stringify(this.user));
       
       // Rediriger l'utilisateur vers une page appropriée
-      if (user.roles.includes('medcin')) {
-        this.router.navigate(['/admin/dashboard']);
-      } else if (user.roles.includes('secretaire')) {
-        this.router.navigate(['/admin/dashboard']);
-      } else {
-        // Gérer d'autres rôles ou une redirection par défaut ici
-      }
+      this.router.navigate(['/admin/dashboard']);
+     
     } else {
       // Authentification échouée
       alert('Identifiants invalides');

@@ -1,5 +1,7 @@
+import { JsonPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Patient } from 'src/Model/Patient';
+import { User } from 'src/Model/User';
 import { PatientService } from 'src/services/patient.service';
 
 @Component({
@@ -9,11 +11,15 @@ import { PatientService } from 'src/services/patient.service';
 })
 export class ListPatientsComponent implements OnInit {
   patients: Patient[] = []
+  localS:string|null=localStorage.getItem("currentUser")
+  currentUser!:User 
+
   constructor(private patientService: PatientService) {
 
   }
   ngOnInit(): void {
     this.getAllPatients()
+    this.getCurrentUser()
   }
   getAllPatients() {
     this.patientService.getPatients().subscribe((data) => {
@@ -31,5 +37,12 @@ export class ListPatientsComponent implements OnInit {
 
     }
 
+  }
+
+  getCurrentUser(){
+    if(this.localS!=null){
+      this.currentUser=JSON.parse(this.localS)
+
+    }
   }
 }

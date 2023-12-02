@@ -25,7 +25,7 @@ export class EditPatientComponent implements OnInit {
    }
   submit(){
     this.patientService.updatePatient(this.patient).subscribe((data)=>{
-      this.router.navigate(["/patients"]);
+      this.router.navigate(["/admin/patients"]);
     }) 
   }
 }

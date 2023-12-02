@@ -29,7 +29,7 @@ export class EditRDVComponent {
  
   submit(){
     this.rdvService.updateRendezvous(this.rdv).subscribe((data)=>{
-      this.router.navigate(["/rendez-vous"])
+      this.router.navigate(["/admin/rendez-vous"])
     })
    }
    getRDV(){

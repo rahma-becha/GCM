@@ -3,7 +3,7 @@ import { AnalyseTraitement } from "./AnalyseTraitement";
 import { MedicamentTraitement } from "./MedicamentTraitement";
 export class Traitement {
     titre!:string
-    date!: string;
+    date!: Date;
     durre!:string;
     medicamentTrairements:MedicamentTraitement[]=[]
     analyseTraitements:AnalyseTraitement[]=[];

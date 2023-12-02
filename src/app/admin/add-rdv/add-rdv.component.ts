@@ -41,7 +41,7 @@ export class AddRDVComponent {
   }
   submit(){
     this.rdvService.addRendezvous(this.rdv).subscribe((data)=>{
-      this.router.navigate(["/rendez-vous"])
+      this.router.navigate(["/admin/rendez-vous"])
     })
    }
   

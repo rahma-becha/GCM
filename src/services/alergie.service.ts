@@ -16,4 +16,8 @@ export class AlergieService {
   getAlergies(): Observable<Alergie[]> {
     return this.http.get<Alergie[]>(this.apiUrl);
   }
+
+  addAllergie(alergie: Alergie): Observable<Alergie> {
+    return this.http.post<Alergie>(this.apiUrl, alergie);
+  }
 }

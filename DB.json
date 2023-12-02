@@ -51,23 +51,28 @@
       "genre": "Homme",
       "adresse": "adresse",
       "id": 4
+    },
+    {
+      "nom": "P3",
+      "prenom": "P3",
+      "dateNaissance": "2008-01-02",
+      "telephone": "12345678",
+      "genre": "Femme",
+      "adresse": "adresse",
+      "id": 5
     }
   ],
   "user": [
     {
       "id": 1,
       "nom": "Dr. Dubois",
-      
       "email": "Dubois@gmail.com",
       "password": "Dubois123",
       "role": "medcin"
     },
- 
-  
     {
       "id": 2,
       "nom": "secretaire",
-      
       "email": "secretaire@gmail.com",
       "password": "secretaire123",
       "role": "secretaire"
@@ -146,11 +151,13 @@
       "poids": 75,
       "taille": 180,
       "allergie": false,
+      "prixPaye": 5,
+      "prixRestant": 25,
       "traitements": [
         {
           "date": "2023-12-01",
-          "titre":"titre traitement",
-          "durre":"6 mois",
+          "titre": "titre traitement",
+          "durre": "6 mois",
           "medicament": [
             {
               "id": 1,
@@ -164,6 +171,83 @@
             }
           ],
           "analyse": null
+        },
+        {
+          "medicamentTrairements": [
+            {
+              "medicament": {
+                "id": 1,
+                "medicament": "Aspirine",
+                "nbrFois": 3
+              },
+              "nbrFois": "2"
+            }
+          ],
+          "analyseTraitements": [
+            {
+              "analyse": {
+                "id": "1",
+                "titreAnalyse": "Hémogramme complet (FSC)"
+              }
+            }
+          ],
+          "titre": "T1",
+          "durre": "6 mois"
+        },
+        {
+          "medicamentTrairements": [
+            {
+              "medicament": {
+                "id": 1,
+                "medicament": "Aspirine",
+                "nbrFois": 3
+              },
+              "nbrFois": "2"
+            }
+          ],
+          "analyseTraitements": [
+            {
+              "analyse": {
+                "id": "2",
+                "titreAnalyse": "Bilan lipidique"
+              }
+            }
+          ],
+          "titre": "T1",
+          "durre": "6 mois"
+        },
+        {
+          "medicamentTrairements": [
+            {
+              "medicament": {
+                "id": 1,
+                "medicament": "Aspirine",
+                "nbrFois": 3
+              },
+              "nbrFois": "2"
+            }
+          ],
+          "analyseTraitements": [
+            {
+              "analyse": {
+                "id": "2",
+                "titreAnalyse": "Bilan lipidique"
+              }
+            }
+          ],
+          "titre": "T1",
+          "durre": "6 mois",
+          "date": "2023-12-02T19:31:45.686Z"
+        }
+      ],
+      "allergieDetails": [
+        {
+          "id": 1,
+          "nomAlergie": "Pollen"
+        },
+        {
+          "id": 2,
+          "nomAlergie": "Acariens"
         }
       ]
     },
@@ -188,13 +272,25 @@
       ],
       "traitements": [
         {
-          "titre":"titre traitement",
-          "durre":"6 mois",
+          "titre": "titre traitement",
+          "durre": "6 mois",
           "date": "2023-12-02",
           "medicament": null,
           "analyse": "Dermatographie"
         }
       ]
+    },
+    {
+      "patient": {
+        "nom": "P3",
+        "prenom": "P3",
+        "dateNaissance": "2008-01-02",
+        "telephone": "12345678",
+        "genre": "Femme",
+        "adresse": "adresse",
+        "id": 5
+      },
+      "id": 3
     }
   ],
   "alergie": [
@@ -213,23 +309,35 @@
     {
       "id": 4,
       "nomAlergie": "Poils d'animaux"
+    },
+    {
+      "nomAlergie": "",
+      "id": 5
+    },
+    {
+      "nomAlergie": "test",
+      "id": 6
     }
   ],
-  "analyses":[
+  "analyses": [
     {
-      "id":"1","titreAnalyse":"Hémogramme complet (FSC)"
+      "id": "1",
+      "titreAnalyse": "Hémogramme complet (FSC)"
     },
     {
-      "id":"2","titreAnalyse":"Bilan lipidique"
+      "id": "2",
+      "titreAnalyse": "Bilan lipidique"
     },
     {
-      "id":"2","titreAnalyse":"Tests de la fonction hépatique"
+      "id": "2",
+      "titreAnalyse": "Tests de la fonction hépatique"
     },
     {
-      "id":"2","titreAnalyse":"Tests de la fonction rénale"
+      "id": "2",
+      "titreAnalyse": "Tests de la fonction rénale"
     }
   ],
-  "medicaments":[
+  "medicaments": [
     {
       "id": 1,
       "medicament": "Aspirine",
