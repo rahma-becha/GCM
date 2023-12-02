@@ -53,23 +53,21 @@
       "id": 4
     }
   ],
-  "medecin": [
+  "user": [
     {
       "id": 1,
       "nom": "Dr. Dubois",
-      "specialite": "Cardiologue",
-      "telephone": "0123456789",
+      
       "email": "Dubois@gmail.com",
       "password": "Dubois123",
       "role": "medcin"
-    }
-  ],
-  "secraitaire": [
+    },
+ 
+  
     {
-      "id": 1,
+      "id": 2,
       "nom": "secretaire",
-      "specialite": "Cardiologue",
-      "telephone": "0123456789",
+      
       "email": "Dubois@gmail.com",
       "password": "Dubois123",
       "role": "secretaire"
