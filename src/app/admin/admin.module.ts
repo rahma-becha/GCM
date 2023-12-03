@@ -16,6 +16,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AdminRoutingModule } from './admin-routing.module';
 import { RouterModule } from '@angular/router';
+import { RdvComponent } from './rdv/rdv.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { RouterModule } from '@angular/router';
     DossierMedicaleComponent,
     EditPatientComponent,
     EditRDVComponent,
+    RdvComponent,
   ],
   imports: [
     CommonModule,
@@ -34,7 +36,6 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild(AdminRoutingModule),
-
   ],
   providers:[
     HttpClient,

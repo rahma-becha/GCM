@@ -116,7 +116,7 @@
       "id": 2
     },
     {
-      "status": "En attente d'arrivée",
+      "status": "Annulé",
       "date": "2023-12-09",
       "heure": "14:14",
       "motif": "Une consultation de contrôle",
@@ -132,6 +132,42 @@
         "NumCnam": 87654
       },
       "id": 3
+    },
+    {
+      "status": "Clôture",
+      "patient": {
+        "nom": "P11",
+        "prenom": "P11",
+        "dateNaissance": "2023-09-25",
+        "telephone": "87654321",
+        "genre": "Femme",
+        "CNAM": true,
+        "NumCnam": "11555",
+        "adresse": "adresse adresse",
+        "id": 3
+      },
+      "date": "2023-12-07",
+      "heure": "10:34",
+      "motif": "Une consultation de contrôle",
+      "id": 4
+    },
+    {
+      "status": "En attente d'arrivée",
+      "date": "2023-12-08",
+      "heure": "10:41",
+      "motif": "Une consultation de contrôle",
+      "patient": {
+        "nom": "P11",
+        "prenom": "P11",
+        "dateNaissance": "2023-09-25",
+        "telephone": "87654321",
+        "genre": "Femme",
+        "CNAM": true,
+        "NumCnam": "11555",
+        "adresse": "adresse adresse",
+        "id": 3
+      },
+      "id": 5
     }
   ],
   "dossierMedical": [
