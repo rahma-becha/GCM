@@ -31,12 +31,14 @@ export class LoginComponent {
     return undefined
   }
   verifyCridentials(){
+
     for(const item of this.users){
       if(item.email==this.email && item.password==this.password){
         this.user=item
       }
     }
     if (this.user) {
+
       // Authentification réussie
       // Stocker l'utilisateur dans le stockage local si nécessaire
       localStorage.setItem('currentUser', JSON.stringify(this.user));
