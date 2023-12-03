@@ -14,7 +14,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-end">
-                            <a routerLink="/rendez-vous/add" class="btn btn-primary" >+ Ajouter Rendez-vous</a>
+                            <a routerLink="/admin/rendez-vous/add" class="btn btn-primary" >+ Ajouter Rendez-vous</a>
                         </div>
 
                     </div>
@@ -57,7 +57,7 @@
                                         </td>
                                         <td>
                                             <a *ngIf="rdv.status==statuts[0] || rdv.status==statuts[1]" 
-                                            [routerLink]="['/rendez-vous/edit',rdv.id]"
+                                            [routerLink]="['/admin/rendez-vous/edit',rdv.id]"
                                                 class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
                                                 data-template="editTwo">
                                                 <i class="fa fa-edit"></i>

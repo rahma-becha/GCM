@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Alergie } from 'src/Model/Alergie';
 import { DossierMedical } from 'src/Model/DossierMedical';
 import { Patient } from 'src/Model/Patient';
@@ -18,39 +18,37 @@ import { AnalyseTraitement } from 'src/Model/AnalyseTraitement';
   templateUrl: './dossier-medicale.component.html',
   styleUrls: ['./dossier-medicale.component.css']
 })
-export class DossierMedicaleComponent implements OnInit  {
-  titre:String="";
-  treatement:Traitement=new Traitement()
-  dossierMedical:DossierMedical=new DossierMedical()
-  patient:Patient=new Patient();
-  medicament:String="";
-  titreAnalyse:String="";
-  taille:String="";
-  poid:String="";
+export class DossierMedicaleComponent implements OnInit {
+  titre: String = "";
+  treatement: Traitement = new Traitement()
+  dossierMedical: DossierMedical = new DossierMedical()
+  patient: Patient = new Patient();
+  medicament: String = "";
+  titreAnalyse: String = "";
+  taille: String = "";
+  poid: String = "";
   alergies: Alergie[] = [];
-  selectedAlergies: Alergie[] = [];
-  autre:boolean=false
-  autreAllergies=""
-  id:number=0;
-  dm:DossierMedical[]=[]
-  analyses:Analyse[]=[]
-  medicaments:Medicament[]=[]
-  selectedMedicament!:Medicament;
-  selectedAnalyse!:Analyse;
-  nbrFois!:number
-submit() {
-throw new Error('Method not implemented.');
-}
+  selectedAlergies: Alergie[] = this.dossierMedical.allergieDetails;
+  autre: boolean = false
+  autreAllergies = ""
+  id: number = 0;
+  dm: DossierMedical[] = []
+  analyses: Analyse[] = []
+  medicaments: Medicament[] = []
+  selectedMedicament!: Medicament;
+  selectedAnalyse!: Analyse;
+  nbrFois!: number
+ 
   selectedFile: File | undefined;
 
   onFileSelected(event: any) {
     this.selectedFile = event.target.files[0];
   }
 
- 
 
-  constructor(private alergieService: AlergieService,private activatedRouter:ActivatedRoute,private patientService:PatientService,private dossierMedicalService:DossierMedicalService,private analyseService:AnalyseService,private medicamentService:MedicamentService) {
-    this.id=this.activatedRouter.snapshot.params['id']
+
+  constructor(private alergieService: AlergieService, private activatedRouter: ActivatedRoute, private patientService: PatientService, private dossierMedicalService: DossierMedicalService, private analyseService: AnalyseService, private medicamentService: MedicamentService,private router:Router) {
+    this.id = this.activatedRouter.snapshot.params['id']
 
   }
 
@@ -58,8 +56,10 @@ throw new Error('Method not implemented.');
     this.getAllergies()
     this.getPatient()
     this.getDossierMedical()
-   this.getAllAnalyses();
-   this.getAllMedicaments()    
+    this.getAllAnalyses();
+    this.getAllMedicaments()
+    console.log(this.dossierMedical.allergieDetails)
+
   }
 
   onCheckboxChange(alergie: Alergie) {
@@ -69,68 +69,91 @@ throw new Error('Method not implemented.');
     } else {
       this.selectedAlergies.push(alergie);
     }
-    this.dossierMedical.allergieDetails=this.selectedAlergies
+    this.dossierMedical.allergieDetails = this.selectedAlergies
     console.log(this.dossierMedical.allergieDetails)
   }
-  getAllergies(){
+  getAllergies() {
     this.alergieService.getAlergies().subscribe((data) => {
       this.alergies = data;
     });
   }
 
-  getPatient(){
-      this.patientService.getPatientById(this.id).subscribe((data)=>{
-         this.patient=data
-      })
-      
+  getPatient() {
+    this.patientService.getPatientById(this.id).subscribe((data) => {
+      this.patient = data
+    })
+
   }
 
   getDossierMedical() {
     this.dossierMedicalService.getDossiersMedicaux().subscribe((data) => {
-     this.dm = data;
+      this.dm = data;
       this.getDossierMedicalPatient()
-      
     });
 
   }
-  getDossierMedicalPatient(){
-      for(const item of this.dm){
-        if(item.patient.id==this.id){
-          this.dossierMedical=item
-        }
+  getDossierMedicalPatient() {
+    for (const item of this.dm) {
+      if (item.patient.id == this.id) {
+        this.dossierMedical = item
+       
       }
+    }
   }
-  getAllAnalyses(){
-    this.analyseService.getAllAnalyses().subscribe((data)=>{
-      this.analyses=data
+  getAllAnalyses() {
+    this.analyseService.getAllAnalyses().subscribe((data) => {
+      this.analyses = data
     })
   }
 
-  getAllMedicaments(){
-    this.medicamentService.getAllMedicaments().subscribe((data)=>{
-      this.medicaments=data
+  getAllMedicaments() {
+    this.medicamentService.getAllMedicaments().subscribe((data) => {
+      this.medicaments = data
     })
   }
-  saveMedicament(){
-    let mt=new MedicamentTraitement();
-    mt.medicament=this.selectedMedicament;
-    mt.nbrFois=this.nbrFois
+  saveMedicament() {
+    let mt = new MedicamentTraitement();
+    mt.medicament = this.selectedMedicament;
+    mt.nbrFois = this.nbrFois
     this.treatement.medicamentTrairements.push(mt)
-    this.selectedMedicament=new Medicament();
-    this.nbrFois=0
+    this.selectedMedicament = new Medicament();
+    this.nbrFois = 0
   }
 
-  saveAnalyse(){
-    let analyse=new AnalyseTraitement();
-    analyse.analyse=this.selectedAnalyse;
+  saveAnalyse() {
+    let analyse = new AnalyseTraitement();
+    analyse.analyse = this.selectedAnalyse;
     this.treatement.analyseTraitements.push(analyse)
-    this.selectedAnalyse=new Analyse()
+    this.selectedAnalyse = new Analyse()
   }
 
-  deleteMed(med:MedicamentTraitement){
-    this.treatement.medicamentTrairements.splice(this.treatement.medicamentTrairements.indexOf(med),1)
+  deleteMed(med: MedicamentTraitement) {
+    this.treatement.medicamentTrairements.splice(this.treatement.medicamentTrairements.indexOf(med), 1)
   }
-  deleteAnalyse(analyse:AnalyseTraitement){
-    this.treatement.analyseTraitements.splice(this.treatement.analyseTraitements.indexOf(analyse),1)
+  deleteAnalyse(analyse: AnalyseTraitement) {
+    this.treatement.analyseTraitements.splice(this.treatement.analyseTraitements.indexOf(analyse), 1)
   }
+
+  calculerPrixRestant()
+  {
+    return this.dossierMedical.prixRestant-=this.dossierMedical.prixPaye
+  }
+
+  submit() {
+   if(this.autre==true){
+      let newAllergies=new Alergie()
+      newAllergies.nomAlergie=this.autreAllergies
+      this.alergieService.addAllergie(newAllergies).subscribe((allergie)=>{
+        this.dossierMedical.allergieDetails.push(allergie)
+      })
+   }
+   this.treatement.date=new Date();
+   this.dossierMedical.traitements.push(this.treatement)
+    this.dossierMedicalService.updateDossierMedical(this.dossierMedical).subscribe((data)=>{
+      this.router.navigate(["/admin/patients"]);
+
+    })
+  }
+
+ 
 }

@@ -14,7 +14,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-end">
-                            <a routerLink="/patients/add" class="btn btn-primary">+ Ajouter Patient</a>
+                            <a routerLink="/admin/patients/add" class="btn btn-primary">+ Ajouter Patient</a>
                         </div>
 
                     </div>
@@ -72,10 +72,10 @@
                                         </td>
                                         <td>{{patient.NumCnam}}</td>
                                         <td>
-                                            <a  routerLink="/patients/dossiermedicale/{{patient.id}}" class="btn btn-ghost btn-sm rounded-circle ">
+                                            <a [hidden]="currentUser.role=='secretaire'"  routerLink="/admin/patients/dossiermedicale/{{patient.id}}" class="btn btn-ghost btn-sm rounded-circle ">
                                                 <i class="fa fa-search"></i>
                                             </a>
-                                            <a [routerLink]="['/patients/edit',patient.id]"
+                                            <a [routerLink]="['/admin/patients/edit',patient.id]"
                                                 class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
                                                 data-template="editTwo">
                                                 <i class="fa fa-edit"></i>

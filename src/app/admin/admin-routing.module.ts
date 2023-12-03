@@ -10,6 +10,7 @@ import { AddRDVComponent } from './add-rdv/add-rdv.component';
 import { DossierMedicaleComponent } from './dossier-medicale/dossier-medicale.component';
 import { EditPatientComponent } from './edit-patient/edit-patient.component';
 import { EditRDVComponent } from './edit-rdv/edit-rdv.component';
+
 export const AdminRoutingModule: Routes = [
   {path:"dashboard",component:DashboardComponent},
   {path:"patients",component:ListPatientsComponent},
