@@ -31,8 +31,9 @@ export class LoginComponent {
   }
   verifyCridentials(){
     let user:User|undefined=this.getUser()
-    console.log(user)
+    //console.log(user)
     if (user) {
+      console.log(user)
       // Authentification réussie
       // Stocker l'utilisateur dans le stockage local si nécessaire
       localStorage.setItem('currentUser', JSON.stringify(user));

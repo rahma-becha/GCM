@@ -16,6 +16,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AdminRoutingModule } from './admin-routing.module';
 import { RouterModule } from '@angular/router';
+import { NgApexchartsModule } from 'ng-apexcharts';
+import { WeekComponent } from './week/week.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import { RouterModule } from '@angular/router';
     DossierMedicaleComponent,
     EditPatientComponent,
     EditRDVComponent,
+    WeekComponent,
   ],
   imports: [
     CommonModule,
@@ -34,6 +37,7 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild(AdminRoutingModule),
+    NgApexchartsModule,
 
   ],
   providers:[
