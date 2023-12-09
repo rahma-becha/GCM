@@ -228,16 +228,27 @@
                                             <div class="container mt-3">
                                                 <div class="row">
                                                     <div class="col-md-12">
+                                                        <div *ngFor="let alergie of dossierMedical.allergieDetails" class="form-check mb-2">
+                                                            <input type="checkbox" class="form-check-input"
+                                                                name="allergieDetails" [id]="alergie.id"
+                                                                [value]="alergie.nomAlergie"
+                                                                (change)="onCheckboxChange(alergie)"
+                                                                [checked]=true />
+                                                            <label class="form-check-label" [for]="alergie.id">{{
+                                                                alergie.nomAlergie }}</label>
 
+                                                        </div>
                                                         
                                                         <div *ngFor="let alergie of alergies" class="form-check mb-2">
-                                                            <input type="checkbox" class="form-check-input"
-                                                                name="allergies" [id]="alergie.id"
+                                                            <div *ngIf="dossierMedical.allergieDetails.indexOf(alergie)==-1">
+                                                                <input type="checkbox" class="form-check-input"
+                                                                name="allergieDetails" [id]="alergie.id"
                                                                 [value]="alergie.nomAlergie"
                                                                 (change)="onCheckboxChange(alergie)"
                                                                 [checked]="selectedAlergies.includes(alergie)" />
                                                             <label class="form-check-label" [for]="alergie.id">{{
                                                                 alergie.nomAlergie }}</label>
+                                                            </div>
 
                                                         </div>
 

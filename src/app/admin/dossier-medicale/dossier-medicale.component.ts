@@ -28,7 +28,7 @@ export class DossierMedicaleComponent implements OnInit {
   taille: String = "";
   poid: String = "";
   alergies: Alergie[] = [];
-  selectedAlergies: Alergie[] = this.dossierMedical.allergieDetails;
+  selectedAlergies: Alergie[] = []
   autre: boolean = false
   autreAllergies = ""
   id: number = 0;
@@ -58,7 +58,6 @@ export class DossierMedicaleComponent implements OnInit {
     this.getDossierMedical()
     this.getAllAnalyses();
     this.getAllMedicaments()
-
   }
 
   onCheckboxChange(alergie: Alergie) {
@@ -69,7 +68,6 @@ export class DossierMedicaleComponent implements OnInit {
       this.selectedAlergies.push(alergie);
     }
     this.dossierMedical.allergieDetails = this.selectedAlergies
-    console.log(this.dossierMedical.allergieDetails)
   }
   getAllergies() {
     this.alergieService.getAlergies().subscribe((data) => {
@@ -95,7 +93,7 @@ export class DossierMedicaleComponent implements OnInit {
     for (const item of this.dm) {
       if (item.patient.id == this.id) {
         this.dossierMedical = item
-       
+        this.selectedAlergies=this.dossierMedical.allergieDetails;
       }
     }
   }
@@ -153,6 +151,7 @@ export class DossierMedicaleComponent implements OnInit {
 
     })
   }
+  
 
  
 }
