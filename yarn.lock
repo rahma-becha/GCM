@@ -1223,6 +1223,18 @@
     "@babel/helper-validator-identifier" "^7.22.20"
     to-fast-properties "^2.0.0"
 
+"@canvasjs/angular-charts@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@canvasjs/angular-charts/-/angular-charts-1.0.3.tgz#f6df0718d08aa06ab141f395d30fe1844d0e862f"
+  integrity sha512-4tyl8ZBpOMpE+0jVoIS1lMdulB1BW2IPca5XPH0HJ6sv9i+F2h0r/h8Da0WR4/ZEfvev5ISh2y94GS/bxCG6Dg==
+  dependencies:
+    tslib "^2.3.0"
+
+"@canvasjs/charts@^3.7.30":
+  version "3.7.30"
+  resolved "https://registry.yarnpkg.com/@canvasjs/charts/-/charts-3.7.30.tgz#dd58bbafdd95fe1c107ea1217a2c40023bdb6634"
+  integrity sha512-3S7rmo+4NdeM+GNTpWRMI9VcHrCKSxbne1lb5+Y6+hcD8uyAjHFsji7mQEJAJwT+N68tOR9kt7zB2Un6M+qO7w==
+
 "@colors/colors@1.5.0":
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/@colors/colors/-/colors-1.5.0.tgz#bb504579c1cae923e6576a4f5da43d25f97bdbd9"
@@ -1423,6 +1435,11 @@
   dependencies:
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
+
+"@kurkle/color@^0.3.0":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@kurkle/color/-/color-0.3.2.tgz#5acd38242e8bde4f9986e7913c8fdf49d3aa199f"
+  integrity sha512-fuscdXJ9G1qb7W8VdHi+IwRqij3lBkosAm4ydQtEmbY58OzHXqQhvlxqEkoz0yssNVn38bcpRWgA9PP+OGoisw==
 
 "@leichtgewicht/ip-codec@^2.0.1":
   version "2.0.4"
@@ -2468,6 +2485,13 @@ chardet@^0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/chardet/-/chardet-0.7.0.tgz#90094849f0937f2eedc2425d0d28a9e5f0cbad9e"
   integrity sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==
+
+chart.js@^4.4.1:
+  version "4.4.1"
+  resolved "https://registry.yarnpkg.com/chart.js/-/chart.js-4.4.1.tgz#ac5dc0e69a7758909158a96fe80ce43b3bb96a9f"
+  integrity sha512-C74QN1bxwV1v2PEujhmKjOZ7iUM4w6BWs23Md/6aOZZSlwMzeCIDGuZay++rBgChYru7/+QFeoQW0fQoP534Dg==
+  dependencies:
+    "@kurkle/color" "^0.3.0"
 
 chokidar@3.5.3, "chokidar@>=3.0.0 <4.0.0", chokidar@^3.0.0, chokidar@^3.5.1, chokidar@^3.5.3:
   version "3.5.3"
@@ -4218,6 +4242,11 @@ locate-path@^5.0.0:
   dependencies:
     p-locate "^4.1.0"
 
+lodash-es@^4.17.15:
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.21.tgz#43e626c46e6591b7750beb2b50117390c609e3ee"
+  integrity sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==
+
 lodash.debounce@^4.0.8:
   version "4.0.8"
   resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
@@ -4613,6 +4642,14 @@ ng-apexcharts@^1.8.0:
   integrity sha512-NwJuMLHoLm52LSzM08RXV6oOOTyUYREAV53WHVGs+L2qi8UWbxCz19hX0kk+F/xFLEhhuiLegO3T1v30jLbKSQ==
   dependencies:
     tslib "^2.0.0"
+
+ng2-charts@^5.0.3:
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/ng2-charts/-/ng2-charts-5.0.3.tgz#ce48e85ba375864928ca5c2788e11cbf1023cea2"
+  integrity sha512-/lTY64tiCN/pJPx+oIWRWOhtCk+ZbAU9yAUDNnRJwhe+a8ajcO5yS0tVOm5k7pj3doVp9+UdBRahyt6woJ95Rw==
+  dependencies:
+    lodash-es "^4.17.15"
+    tslib "^2.3.0"
 
 nice-napi@^1.0.2:
   version "1.0.2"

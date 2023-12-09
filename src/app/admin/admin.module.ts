@@ -16,8 +16,11 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AdminRoutingModule } from './admin-routing.module';
 import { RouterModule } from '@angular/router';
-import { NgApexchartsModule } from 'ng-apexcharts';
+
 import { WeekComponent } from './week/week.component';
+
+import { BrowserModule } from '@angular/platform-browser';
+import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,10 @@ import { WeekComponent } from './week/week.component';
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild(AdminRoutingModule),
-    NgApexchartsModule,
+   
+   
+    
+    CanvasJSAngularChartsModule
 
   ],
   providers:[

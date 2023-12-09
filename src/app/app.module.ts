@@ -13,6 +13,8 @@ import { AdminComponent } from './admin/admin.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
+import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
+    CanvasJSAngularChartsModule
   ],
   providers: [
     HttpClient,
