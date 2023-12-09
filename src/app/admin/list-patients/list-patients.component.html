@@ -72,16 +72,16 @@
                                         </td>
                                         <td>{{patient.NumCnam}}</td>
                                         <td>
-                                            <a [hidden]="currentUser.role=='secretaire'"  routerLink="/admin/patients/dossiermedicale/{{patient.id}}" class="btn btn-ghost btn-sm rounded-circle ">
+                                            <a [hidden]="currentUser.role=='secretaire'"  routerLink="/admin/patients/dossiermedicale/{{patient.id}}" class="btn btn-ghost btn-sm rounded-circle text-secondary">
                                                 <i class="fa fa-search"></i>
                                             </a>
                                             <a [routerLink]="['/admin/patients/edit',patient.id]"
-                                                class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
+                                                class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip text-info"
                                                 data-template="editTwo">
                                                 <i class="fa fa-edit"></i>
                                                
                                             </a>
-                                            <a (click)="deletePatient(patient.id)" class="btn btn-ghost btn-sm rounded-circle ">
+                                            <a (click)="deletePatient(patient.id)" class="btn btn-ghost btn-sm rounded-circle text-danger">
                                                 <i class="fa-sharp fa-solid fa-trash"></i>
 
                                             </a>

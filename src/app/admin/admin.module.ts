@@ -16,8 +16,11 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AdminRoutingModule } from './admin-routing.module';
 import { RouterModule } from '@angular/router';
+<<<<<<< HEAD
 
 import { WeekComponent } from './week/week.component';
+=======
+>>>>>>> df709ca8437628e61ee279a77164931df7397aa9
 
 import { BrowserModule } from '@angular/platform-browser';
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
@@ -32,7 +35,6 @@ import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
     DossierMedicaleComponent,
     EditPatientComponent,
     EditRDVComponent,
-    WeekComponent,
   ],
   imports: [
     CommonModule,
@@ -40,10 +42,13 @@ import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild(AdminRoutingModule),
+<<<<<<< HEAD
    
    
     
     CanvasJSAngularChartsModule
+=======
+>>>>>>> df709ca8437628e61ee279a77164931df7397aa9
 
   ],
   providers:[

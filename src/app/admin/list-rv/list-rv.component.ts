@@ -36,18 +36,21 @@ export class ListRVComponent implements OnInit {
       }
   
     }
-    setColutre(rdv:Rendezvous){
-      rdv.status="Clôture"
-      this.rendezvousService.updateRendezvous(rdv).subscribe(data => {
-        this.getAllRDVs()
-      }
-      )
+    changeStatus(rdv:Rendezvous){
+       if(rdv.status==this.statuts[1]){
+        rdv.status="Clôture"
+        this.rendezvousService.updateRendezvous(rdv).subscribe(data => {
+          this.getAllRDVs()
+        }
+        )
+       }
+       if(rdv.status==this.statuts[0]){
+        rdv.status="En cours"
+        this.rendezvousService.updateRendezvous(rdv).subscribe(data => {
+          this.getAllRDVs()
+        }
+        )
+       }
     }
-  setEnCours(rdv:Rendezvous){
-    rdv.status="En cours"
-          this.rendezvousService.updateRendezvous(rdv).subscribe(data => {
-            this.getAllRDVs()
-          }
-          )
-  }
+   
 }

@@ -1,0 +1,34 @@
+<td class="ps-0">
+    <div class="d-flex align-items-center">
+        <img src="../../assets/images/avatar/avatar-7.jpg" alt=""
+            class="img-4by3-sm rounded-circle rounded-image">
+        <div class="ms-3">
+            <h5 class="mb-0">
+                <a href="#!" class="text-inherit">{{rdv.patient.nom+" "+rdv.patient.prenom}}</a>
+            </h5>
+
+        </div>
+    </div>
+</td>
+<td>{{rdv.patient.dateNaissance | date}}</td>
+<td>{{rdv.date | date}}  {{rdv.heure}}</td>
+<td>{{rdv.motif}}</td>
+<td>
+    <span class="badge badge-success-soft"  *ngIf="rdv.status==statuts[2]">{{rdv.status}}</span>
+    <span class="badge badge-warning-soft" role="button" (click)="changeStatusrdv()" *ngIf="rdv.status==statuts[1]">{{rdv.status}}</span>
+    <span class="badge badge-primary-soft" role="button" *ngIf="rdv.status==statuts[0] " (click)="changeStatusrdv()" >{{rdv.status}}</span>
+    <span class="badge badge-danger-soft" *ngIf="rdv.status==statuts[3]" >{{rdv.status}}</span>
+</td>
+<td>
+    <a *ngIf="rdv.status==statuts[0] || rdv.status==statuts[1]" 
+    [routerLink]="['/admin/rendez-vous/edit',rdv.id]"
+        class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip text-info"
+        data-template="editTwo">
+        <i class="fa fa-edit"></i>
+       
+    </a>
+    <a *ngIf="rdv.status==statuts[0] || rdv.status==statuts[1]" title="Annuler"  (click)="deleteRDV()" class="btn btn-ghost btn-sm rounded-circle text-danger">
+        <i class="fa-sharp fa-solid fa-trash"></i>
+
+    </a>
+</td>

@@ -58,7 +58,6 @@ export class DossierMedicaleComponent implements OnInit {
     this.getDossierMedical()
     this.getAllAnalyses();
     this.getAllMedicaments()
-    console.log(this.dossierMedical.allergieDetails)
 
   }
 
