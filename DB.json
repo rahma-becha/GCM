@@ -168,6 +168,24 @@
         "id": 3
       },
       "id": 5
+    },
+    {
+      "status": "En attente d'arrivée",
+      "patient": {
+        "id": 1,
+        "nom": "Dupont",
+        "prenom": "Jean",
+        "dateNaissance": "1980-01-15",
+        "genre": "Homme",
+        "adresse": "123 Rue de la Santé",
+        "telephone": "0123456789",
+        "CNAM": true,
+        "NumCnam": 12358
+      },
+      "date": "2023-12-09",
+      "heure": "11:33",
+      "motif": "Une consultation de contrôle",
+      "id": 6
     }
   ],
   "dossierMedical": [

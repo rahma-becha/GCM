@@ -15,6 +15,7 @@ export class DashboardComponent implements OnInit{
   rendezvous: Rendezvous[] = [];
   nombreRendezVousEnAttente: number = 0;
   dateAujourdhui: Date = new Date(); 
+  
   constructor(private patientService: PatientService,private rendezvousService:RendezvousService) {}
     ngOnInit(): void {
       this.nombrePtaient();
@@ -47,7 +48,5 @@ export class DashboardComponent implements OnInit{
         }
       }
     }
-    
-
-    
+        
 }
