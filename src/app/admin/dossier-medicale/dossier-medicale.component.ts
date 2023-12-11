@@ -13,6 +13,8 @@ import { Analyse } from 'src/Model/Analyse';
 import { Medicament } from 'src/Model/Medicament';
 import { MedicamentTraitement } from 'src/Model/MedicamentTraitement';
 import { AnalyseTraitement } from 'src/Model/AnalyseTraitement';
+import Swal from "sweetalert2"
+
 @Component({
   selector: 'app-dossier-medicale',
   templateUrl: './dossier-medicale.component.html',
@@ -147,7 +149,12 @@ export class DossierMedicaleComponent implements OnInit {
    this.treatement.date=new Date();
    this.dossierMedical.traitements.push(this.treatement)
     this.dossierMedicalService.updateDossierMedical(this.dossierMedical).subscribe((data)=>{
+      Swal.fire("Success", "modification est effectuée avec succes", "success")
+
       this.router.navigate(["/admin/patients"]);
+
+    },(error)=>{
+      Swal.fire("Error", "une erreur est survenue", "error")
 
     })
   }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Patient } from 'src/Model/Patient';
 import { PatientService } from 'src/services/patient.service';
+import Swal from "sweetalert2"
 
 @Component({
   selector: 'app-edit-patient',
@@ -25,7 +26,12 @@ export class EditPatientComponent implements OnInit {
    }
   submit(){
     this.patientService.updatePatient(this.patient).subscribe((data)=>{
+      Swal.fire("Success", "modification est effectuée avec succes", "success")
+
       this.router.navigate(["/admin/patients"]);
+    },(error)=>{
+      Swal.fire("Error", "une erreur est survenue", "error")
+
     }) 
   }
 }

@@ -60,6 +60,15 @@
       "genre": "Femme",
       "adresse": "adresse",
       "id": 5
+    },
+    {
+      "nom": "Dupont",
+      "prenom": "jean",
+      "dateNaissance": "2023-12-01",
+      "telephone": "12345678",
+      "adresse": "tu",
+      "genre": "Femme",
+      "id": 6
     }
   ],
   "user": [
@@ -222,6 +231,22 @@
         "NumCnam": 12358
       },
       "id": 8
+    },
+    {
+      "status": "Annulé",
+      "patient": {
+        "nom": "Dupont",
+        "prenom": "jean",
+        "dateNaissance": "2023-12-01",
+        "telephone": "12345678",
+        "adresse": "tu",
+        "genre": "Femme",
+        "id": 6
+      },
+      "date": "2023-12-01",
+      "heure": "06:13",
+      "motif": "Une consultation de contrôle",
+      "id": 9
     }
   ],
   "dossierMedical": [
@@ -358,7 +383,27 @@
       "taille": 165,
       "allergie": true,
       "allergieDetails": [
-        "Pénicilline"
+        "Pénicilline",
+        {
+          "id": 1,
+          "nomAlergie": "Pollen"
+        },
+        {
+          "id": 2,
+          "nomAlergie": "Acariens"
+        },
+        {
+          "id": 3,
+          "nomAlergie": "Moisissures"
+        },
+        {
+          "id": 4,
+          "nomAlergie": "Poils d'animaux"
+        },
+        {
+          "nomAlergie": "test",
+          "id": 6
+        }
       ],
       "traitements": [
         {
@@ -367,8 +412,17 @@
           "date": "2023-12-02",
           "medicament": null,
           "analyse": "Dermatographie"
+        },
+        {
+          "medicamentTrairements": [],
+          "analyseTraitements": [],
+          "titre": "sdsd",
+          "durre": "sdsd",
+          "date": "2023-12-11T18:13:25.951Z"
         }
-      ]
+      ],
+      "prixPaye": 10,
+      "prixRestant": null
     },
     {
       "patient": {
@@ -381,6 +435,90 @@
         "id": 5
       },
       "id": 3
+    },
+    {
+      "allergieDetails": [],
+      "traitements": [],
+      "patient": {
+        "nom": "test",
+        "prenom": "test",
+        "dateNaissance": "2023-12-01",
+        "telephone": "12345678",
+        "genre": "Femme",
+        "adresse": "ffsdfds",
+        "id": 6
+      },
+      "id": 4
+    },
+    {
+      "allergieDetails": [],
+      "traitements": [],
+      "patient": {
+        "nom": "test",
+        "prenom": "test",
+        "dateNaissance": "2023-12-01",
+        "telephone": "12345678",
+        "genre": "Femme",
+        "adresse": "d",
+        "id": 6
+      },
+      "id": 5
+    },
+    {
+      "allergieDetails": [],
+      "traitements": [],
+      "patient": {
+        "nom": "Dupont",
+        "prenom": "jean",
+        "dateNaissance": "2023-11-28",
+        "telephone": "12345678",
+        "genre": "Femme",
+        "adresse": "f",
+        "id": 6
+      },
+      "id": 6
+    },
+    {
+      "allergieDetails": [],
+      "traitements": [],
+      "patient": {
+        "nom": "Dupont",
+        "prenom": "jean",
+        "dateNaissance": "2023-12-01",
+        "telephone": "12345678",
+        "adresse": "tu",
+        "genre": "Femme",
+        "id": 6
+      },
+      "id": 7
+    },
+    {
+      "allergieDetails": [],
+      "traitements": [],
+      "patient": {
+        "nom": "test",
+        "prenom": "test",
+        "dateNaissance": "2023-12-01",
+        "telephone": "12345678",
+        "genre": "Femme",
+        "adresse": "d",
+        "id": 7
+      },
+      "id": 8
+    },
+    {
+      "allergieDetails": [],
+      "traitements": [],
+      "patient": {
+        "nom": "test",
+        "prenom": "test",
+        "dateNaissance": "2023-12-01",
+        "telephone": "12345678",
+        "genre": "Femme",
+        "adresse": "fsf",
+        "id": 7
+      },
+      "id": 9
     }
   ],
   "alergie": [

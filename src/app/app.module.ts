@@ -14,6 +14,7 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
+import { AuthentificationService } from 'src/services/authentification.service';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
   ],
   providers: [
     HttpClient,
+    AuthentificationService
   ],
   bootstrap: [AppComponent]
 })

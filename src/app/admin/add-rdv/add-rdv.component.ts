@@ -4,6 +4,7 @@ import { Rendezvous } from 'src/Model/rendezvous';
 import { PatientService } from 'src/services/patient.service';
 import { Router } from '@angular/router';
 import { RendezvousService } from 'src/services/rendrezvous.service';
+import Swal from "sweetalert2"
 
 @Component({
   selector: 'app-add-rdv',
@@ -41,7 +42,12 @@ export class AddRDVComponent {
   }
   submit(){
     this.rdvService.addRendezvous(this.rdv).subscribe((data)=>{
+      Swal.fire("Success", "Ajout est effectuée avec succes", "success")
+
       this.router.navigate(["/admin/rendez-vous"])
+    },(error)=>{
+      Swal.fire("Error", "une erreur est survenue", "error")
+
     })
    }
   

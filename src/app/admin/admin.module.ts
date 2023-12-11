@@ -22,6 +22,10 @@ import { WeekComponent } from './week/week.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 import { RdvComponent } from './rdv/rdv.component';
+import { AlergieService } from 'src/services/alergie.service';
+import { MedicamentService } from 'src/services/medicament.service';
+import { AnalyseService } from 'src/services/analyse.service';
+import { DossierMedicalService } from 'src/services/dossier-medicale.service';
 
 @NgModule({
   declarations: [
@@ -51,7 +55,11 @@ import { RdvComponent } from './rdv/rdv.component';
   providers:[
     HttpClient,
     PatientService,
-    RendezvousService
+    RendezvousService,
+    AlergieService,
+    MedicamentService,
+    AnalyseService,
+    DossierMedicalService
   ]
 })
 export class AdminModule { }

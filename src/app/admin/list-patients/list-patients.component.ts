@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Patient } from 'src/Model/Patient';
 import { User } from 'src/Model/User';
 import { PatientService } from 'src/services/patient.service';
+import Swal from "sweetalert2"
 
 @Component({
   selector: 'app-list-patients',
@@ -30,11 +31,16 @@ export class ListPatientsComponent implements OnInit {
     if (confirm("Vous êtes sure de supprimer cette patient")) {
       if (id != undefined) {
         this.patientService.deletePatient(id).subscribe(data => {
+          Swal.fire("Success", "Suppression est effectuée avec succes", "success")
+
           this.getAllPatients()
+        }, (error)=>{
+          Swal.fire("Error", "une erreur est survenue", "error")
+    
         }
         )
       }
-
+     
     }
 
   }

@@ -5,6 +5,7 @@ import { PatientService } from 'src/services/patient.service';
 import { RendezvousService } from 'src/services/rendrezvous.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { data } from 'jquery';
+import Swal from "sweetalert2"
 
 @Component({
   selector: 'app-edit-rdv',
@@ -29,7 +30,12 @@ export class EditRDVComponent {
  
   submit(){
     this.rdvService.updateRendezvous(this.rdv).subscribe((data)=>{
+      Swal.fire("Success", "modification est effectuée avec succes", "success")
+
       this.router.navigate(["/admin/rendez-vous"])
+    },(error)=>{
+      Swal.fire("Error", "une erreur est survenue", "error")
+
     })
    }
    getRDV(){

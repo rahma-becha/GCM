@@ -2,6 +2,7 @@ import { Component,OnInit } from '@angular/core';
 import { data } from 'jquery';
 import { Rendezvous } from 'src/Model/rendezvous';
 import { RendezvousService } from 'src/services/rendrezvous.service';
+import Swal from "sweetalert2"
 
 @Component({
   selector: 'app-list-rv',
@@ -28,6 +29,8 @@ export class ListRVComponent implements OnInit {
       if (confirm("Vous êtes sure d'annulé cette patient")) {
           rdv.status="Annulé"
           this.rendezvousService.updateRendezvous(rdv).subscribe(data => {
+            Swal.fire("Success", "modification est effectuée avec succes", "success")
+
             this.getAllRDVs()
           }
           )
@@ -40,7 +43,12 @@ export class ListRVComponent implements OnInit {
        if(rdv.status==this.statuts[1]){
         rdv.status="Clôture"
         this.rendezvousService.updateRendezvous(rdv).subscribe(data => {
+          Swal.fire("Success", "modification est effectuée avec succes", "success")
+
           this.getAllRDVs()
+        },(error)=>{
+          Swal.fire("Error", "une erreur est survenue", "error")
+    
         }
         )
        }
@@ -48,6 +56,9 @@ export class ListRVComponent implements OnInit {
         rdv.status="En cours"
         this.rendezvousService.updateRendezvous(rdv).subscribe(data => {
           this.getAllRDVs()
+        },(error)=>{
+          Swal.fire("Error", "une erreur est survenue", "error")
+    
         }
         )
        }
