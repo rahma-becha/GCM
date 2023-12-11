@@ -153,7 +153,7 @@
     },
     {
       "status": "En attente d'arrivée",
-      "date": "2023-12-08",
+      "date": "2023-12-13",
       "heure": "10:41",
       "motif": "Une consultation de contrôle",
       "patient": {
@@ -182,10 +182,46 @@
         "CNAM": true,
         "NumCnam": 12358
       },
-      "date": "2023-12-09",
+      "date": "2023-12-12",
       "heure": "11:33",
       "motif": "Une consultation de contrôle",
       "id": 6
+    },
+    {
+      "status": "En attente d'arrivée",
+      "date": "2023-12-11",
+      "heure": "09:38",
+      "motif": "Une consultation de contrôle",
+      "patient": {
+        "id": 1,
+        "nom": "Dupont",
+        "prenom": "Jean",
+        "dateNaissance": "1980-01-15",
+        "genre": "Homme",
+        "adresse": "123 Rue de la Santé",
+        "telephone": "0123456789",
+        "CNAM": true,
+        "NumCnam": 12358
+      },
+      "id": 7
+    },
+    {
+      "status": "En attente d'arrivée",
+      "date": "2023-12-13",
+      "heure": "10:30",
+      "motif": "Une consultation de contrôle",
+      "patient": {
+        "id": 1,
+        "nom": "Dupont",
+        "prenom": "Jean",
+        "dateNaissance": "1980-01-15",
+        "genre": "Homme",
+        "adresse": "123 Rue de la Santé",
+        "telephone": "0123456789",
+        "CNAM": true,
+        "NumCnam": 12358
+      },
+      "id": 8
     }
   ],
   "dossierMedical": [
@@ -363,10 +399,6 @@
     {
       "id": 4,
       "nomAlergie": "Poils d'animaux"
-    },
-    {
-      "nomAlergie": "",
-      "id": 5
     },
     {
       "nomAlergie": "test",
