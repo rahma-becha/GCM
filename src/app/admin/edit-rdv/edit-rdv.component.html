@@ -36,11 +36,13 @@
                                 <div class="col-md-6">
                                     <label for="date" class="form-label">Date de rendez-vous:</label>
                                     <input type="date" id="date" class="form-control" #date="ngModel"
-                                        [(ngModel)]="rdv.date" name="date" required>
+                                        [(ngModel)]="rdv.date" name="date" required (change)="validateDate()">
                                     <div class="text-danger mt-2" *ngIf="date.invalid && date.touched">
                                         <div *ngIf="date.errors?.['required']" class="mt-2">Le champ Date est
                                             obligatoire</div>
                                     </div>
+                                    <div  class="text-danger mt-2" >{{errorDate}}</div>
+
                                 </div>
 
                                 <div class="col-md-6">

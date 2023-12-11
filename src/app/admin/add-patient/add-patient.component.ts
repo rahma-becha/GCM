@@ -6,6 +6,8 @@ import { Patient } from 'src/Model/Patient';
 import { DossierMedicalService } from 'src/services/dossier-medicale.service';
 import { PatientService } from 'src/services/patient.service';
 import Swal from "sweetalert2"
+import { DatePipe } from '@angular/common';
+
 @Component({
   selector: 'app-add-patient',
   templateUrl: './add-patient.component.html',
@@ -13,6 +15,9 @@ import Swal from "sweetalert2"
 })
 export class AddPatientComponent {
   patient: Patient = new Patient()
+  datepipe: DatePipe = new DatePipe('en-US')
+  errorDate="";
+  date:Date=new Date();
   constructor(private patientService: PatientService, private router: Router, private dossierMedicalService: DossierMedicalService) { }
   submit() {
     this.patientService.addPatient(this.patient).subscribe((data) => {
@@ -29,5 +34,17 @@ export class AddPatientComponent {
     }, (error) => {
       Swal.fire("Error", "une erreur est survenue", "error")
     })
+  }
+
+  validateDate(){
+     let dateTranformed=this.datepipe.transform(this.date,"YYYY-MM-dd")
+     if(dateTranformed!=null && this.patient.dateNaissance>=dateTranformed){
+      this.errorDate="Date de Naissance est invalide";
+     }
+     else
+     {
+      this.errorDate=""
+
+     }
   }
 }

@@ -43,12 +43,13 @@
                             <div class="col-md-6">
                                 <label for="dateNaissance" class="form-label">Date De Naissance <code>*</code></label>
                                 <input type="date" class="form-control" name="dateNaissance" #dateNaissance="ngModel"
-                                    [(ngModel)]="patient.dateNaissance" id="dateNaissance" required>
+                                    [(ngModel)]="patient.dateNaissance" id="dateNaissance" required (change)="validateDate()">
                                 <div class="text-danger mt-2" *ngIf="dateNaissance.invalid && dateNaissance.touched">
                                     <div *ngIf="dateNaissance.errors?.['required']" class="mt-2">Le champ date de
                                         naissance est obligatoire</div>
-
                                 </div>
+                                <div  class="text-danger mt-2" >{{errorDate}}</div>
+
                             </div>
                             <div class="col-md-6">
                                 <label for="telephone" class="form-label">Téléphone <code>*</code></label>

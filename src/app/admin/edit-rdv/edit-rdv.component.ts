@@ -6,6 +6,7 @@ import { RendezvousService } from 'src/services/rendrezvous.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { data } from 'jquery';
 import Swal from "sweetalert2"
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-edit-rdv',
@@ -16,6 +17,9 @@ export class EditRDVComponent {
   statuts: string[] = ["Une consultation de contrôle", "Un renouvellement d'ordonnance", "Un suivi d'une maladie chronique","Un bilan de santé","Un vaccin"];
   rdv:Rendezvous=new Rendezvous()
   id:number=0
+  datepipe: DatePipe = new DatePipe('en-US')
+  errorDate="";
+  date:Date=new Date();
   constructor(private activatedRouter:ActivatedRoute,private router:Router,private rdvService:RendezvousService) {
     this.id=this.activatedRouter.snapshot.params['id']
 
@@ -48,4 +52,15 @@ export class EditRDVComponent {
    getChecked(patient:Patient){
     return patient.id==this.rdv.patient.id
    }
+   validateDate(){
+    let dateTranformed=this.datepipe.transform(this.date,"YYYY-MM-dd")
+    if(dateTranformed!=null && this.rdv.date<dateTranformed){
+     this.errorDate="Date de Naissance est invalide";
+    }
+    else
+    {
+      this.errorDate=""
+
+    }
+ }
 }

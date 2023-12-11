@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Patient } from 'src/Model/Patient';
 import { PatientService } from 'src/services/patient.service';
 import Swal from "sweetalert2"
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-edit-patient',
@@ -12,6 +13,10 @@ import Swal from "sweetalert2"
 export class EditPatientComponent implements OnInit {
   patient:Patient=new Patient()
   id:number=0
+  datepipe: DatePipe = new DatePipe('en-US')
+  errorDate="";
+  date:Date=new Date();
+
   constructor(private activatedRouter:ActivatedRoute,private router:Router,private patientService:PatientService){
     this.id=this.activatedRouter.snapshot.params['id']
 
@@ -40,4 +45,15 @@ if (this.patient.CNAM == false){
 
     }) 
   }
+  validateDate(){
+    let dateTranformed=this.datepipe.transform(this.date,"YYYY-MM-dd")
+    if(dateTranformed!=null && this.patient.dateNaissance>=dateTranformed){
+     this.errorDate="Date de Naissance est invalide";
+    }
+    else
+    {
+      this.errorDate=""
+
+    }
+ }
 }

@@ -66,7 +66,9 @@
                                                 <td>{{med.medicament.medicament}} </td>
                                                 <td>{{med.nbrFois}}</td>
                                                 <td>
-                                                    <button class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip text-danger" (click)="deleteMed(med)"><i class="fa fa-trash"></i></button>
+                                                    <button
+                                                        class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip text-danger"
+                                                        (click)="deleteMed(med)"><i class="fa fa-trash"></i></button>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -109,7 +111,10 @@
                                                         <td>{{analyse.analyse.titreAnalyse}}</td>
                                                         <td>{{analyse.file}}</td>
                                                         <td>
-                                                            <button class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip text-danger" (click)="deleteAnalyse(analyse)"><i class="fa fa-trash"></i></button>
+                                                            <button
+                                                                class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip text-danger"
+                                                                (click)="deleteAnalyse(analyse)"><i
+                                                                    class="fa fa-trash"></i></button>
                                                         </td>
                                                     </tr>
                                                     <tr *ngIf="treatement.analyseTraitements.length==0">
@@ -228,27 +233,16 @@
                                             <div class="container mt-3">
                                                 <div class="row">
                                                     <div class="col-md-12">
-                                                        <div *ngFor="let alergie of dossierMedical.allergieDetails" class="form-check mb-2">
-                                                            <input type="checkbox" class="form-check-input"
-                                                                name="allergieDetails" [id]="alergie.id"
-                                                                [value]="alergie.nomAlergie"
-                                                                (change)="onCheckboxChange(alergie)"
-                                                                [checked]=true />
-                                                            <label class="form-check-label" [for]="alergie.id">{{
-                                                                alergie.nomAlergie }}</label>
 
-                                                        </div>
-                                                        
+
                                                         <div *ngFor="let alergie of alergies" class="form-check mb-2">
-                                                            <div *ngIf="dossierMedical.allergieDetails.indexOf(alergie)==-1">
-                                                                <input type="checkbox" class="form-check-input"
+                                                            <input type="checkbox" class="form-check-input"
                                                                 name="allergieDetails" [id]="alergie.id"
                                                                 [value]="alergie.nomAlergie"
                                                                 (change)="onCheckboxChange(alergie)"
                                                                 [checked]="selectedAlergies.includes(alergie)" />
                                                             <label class="form-check-label" [for]="alergie.id">{{
                                                                 alergie.nomAlergie }}</label>
-                                                            </div>
 
                                                         </div>
 
@@ -260,8 +254,7 @@
                                                         <div class="mb-3 col-md-12" *ngIf="autre">
                                                             <label class="form-label">Autre Allergies</label>
                                                             <input type="text" class="form-control"
-                                                                placeholder="Autre Allergies"
-                                                                name="autreAllergies"
+                                                                placeholder="Autre Allergies" name="autreAllergies"
                                                                 [(ngModel)]="autreAllergies">
                                                         </div>
                                                     </div>
@@ -281,12 +274,14 @@
                             <!-- input -->
                             <div class="mb-3">
                                 <label class="form-label">prix payée</label>
-                                <input type="number" class="form-control" name="prixPaye" #prix="ngModel" [(ngModel)]="dossierMedical.prixPaye" (change)="calculerPrixRestant()">
+                                <input type="number" class="form-control" name="prixPaye" #prix="ngModel"
+                                    [(ngModel)]="dossierMedical.prixPaye" (change)="calculerPrixRestant()">
                             </div>
                             <!-- input -->
                             <div class="mb-3">
                                 <label class="form-label">prix Restant</label>
-                                <label class="form-label form-control">Le prix Restant est : {{dossierMedical.prixRestant}} dt</label>
+                                <label class="form-label form-control">Le prix Restant est :
+                                    {{dossierMedical.prixRestant}} dt</label>
                             </div>
                             <div class="d-grid">
                                 <button class="btn btn-primary" type="submit" [disabled]="f.invalid">Valider</button>
@@ -316,8 +311,8 @@
 
                         <div class="col-md-12 mb-3">
                             <label for="statutSelect" class="form-label">Nom du medicament</label>
-                            <select class="form-select" id="statutSelect"  [(ngModel)]="selectedMedicament" >
-                                <option value="" selected >Choisir un medicament</option>
+                            <select class="form-select" id="statutSelect" [(ngModel)]="selectedMedicament">
+                                <option value="" selected>Choisir un medicament</option>
                                 <option *ngFor="let item of medicaments" [ngValue]="item">{{ item.medicament}}</option>
                             </select>
 
@@ -358,7 +353,7 @@
 
                         <div class="col-md-12 mb-3">
                             <label for="statutSelect" class="form-label">Titre d'analyse :</label>
-                            <select class="form-select" id="statutSelect"  [(ngModel)]="selectedAnalyse">
+                            <select class="form-select" id="statutSelect" [(ngModel)]="selectedAnalyse">
                                 <option value="" selected>Choisir un analyse</option>
                                 <option *ngFor="let item of analyses" [ngValue]="item">{{ item.titreAnalyse}}</option>
                             </select>

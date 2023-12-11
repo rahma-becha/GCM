@@ -5,6 +5,7 @@ import { PatientService } from 'src/services/patient.service';
 import { Router } from '@angular/router';
 import { RendezvousService } from 'src/services/rendrezvous.service';
 import Swal from "sweetalert2"
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-add-rdv',
@@ -12,6 +13,10 @@ import Swal from "sweetalert2"
   styleUrls: ['./add-rdv.component.css']
 })
 export class AddRDVComponent {
+  datepipe: DatePipe = new DatePipe('en-US')
+  errorDate="";
+  date:Date=new Date();
+
   items: Patient[] = [];
   filteredItems: Patient[] = [];
   statuts: string[] = ["Une consultation de contrôle", "Un renouvellement d'ordonnance", "Un suivi d'une maladie chronique","Un bilan de santé","Un vaccin"];
@@ -50,5 +55,14 @@ export class AddRDVComponent {
 
     })
    }
-  
+   validateDate(){
+    let dateTranformed=this.datepipe.transform(this.date,"YYYY-MM-dd")
+    if(dateTranformed!=null && this.rdv.date<dateTranformed){
+     this.errorDate="Date du rendez-vous est invalide";
+    }
+    else{
+      this.errorDate=""
+
+    }
+ }
 }
