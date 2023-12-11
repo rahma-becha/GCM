@@ -17,11 +17,17 @@ export class EditPatientComponent implements OnInit {
   }
    ngOnInit(): void {
      this.getPatient()
+     this. Cnamchanged()
    }
    getPatient(){
       this.patientService.getPatientById(this.id).subscribe((data)=>{
          this.patient=data
       })
+   }
+   Cnamchanged(){
+if (this.patient.CNAM == false){
+  this.patient.NumCnam.toString()!=" "
+}
    }
   submit(){
     this.patientService.updatePatient(this.patient).subscribe((data)=>{

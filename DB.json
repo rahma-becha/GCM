@@ -13,14 +13,14 @@
     },
     {
       "id": 2,
-      "nom": "Dupont",
-      "prenom": "Jean",
-      "dateNaissance": "1990-01-15",
-      "genre": "Homme",
+      "nom": "sirine",
+      "prenom": "trabelsi",
+      "dateNaissance": "2000-01-04",
+      "genre": "Femme",
       "adresse": "123 Rue de la Santé",
-      "telephone": "987654321",
-      "CNAM": true,
-      "NumCnam": 87654
+      "telephone": "25247963",
+      "CNAM": false,
+      "NumCnam": ""
     },
     {
       "id": 2,
@@ -33,33 +33,14 @@
       "CNAM": false
     },
     {
-      "nom": "P11",
-      "prenom": "P11",
-      "dateNaissance": "2023-09-25",
-      "telephone": "87654321",
-      "genre": "Femme",
-      "CNAM": true,
-      "NumCnam": "11555",
-      "adresse": "adresse adresse",
-      "id": 3
-    },
-    {
-      "nom": "P2",
-      "prenom": "P2",
-      "dateNaissance": "2013-01-30",
-      "telephone": "12345678",
-      "genre": "Homme",
-      "adresse": "adresse",
-      "id": 4
-    },
-    {
       "nom": "P3",
       "prenom": "P3",
       "dateNaissance": "2008-01-02",
       "telephone": "12345678",
       "genre": "Femme",
       "adresse": "adresse",
-      "id": 5
+      "id": 5,
+      "CNAM": false
     }
   ],
   "user": [
@@ -81,7 +62,7 @@
   "rendezvous": [
     {
       "status": "Annulé",
-      "date": "2023-12-02",
+      "date": "2023-12-11",
       "heure": "16:07",
       "motif": "Une consultation de contrôle",
       "patient": {
@@ -99,7 +80,7 @@
     },
     {
       "status": "Clôture",
-      "date": "2023-12-04",
+      "date": "2023-12-11",
       "heure": "10:10",
       "motif": "Une consultation de contrôle",
       "patient": {
@@ -117,7 +98,7 @@
     },
     {
       "status": "Annulé",
-      "date": "2023-12-09",
+      "date": "2023-12-12",
       "heure": "14:14",
       "motif": "Une consultation de contrôle",
       "patient": {
@@ -146,7 +127,7 @@
         "adresse": "adresse adresse",
         "id": 3
       },
-      "date": "2023-12-07",
+      "date": "2023-12-13",
       "heure": "10:34",
       "motif": "Une consultation de contrôle",
       "id": 4
@@ -182,10 +163,28 @@
         "CNAM": true,
         "NumCnam": 12358
       },
-      "date": "2023-12-09",
+      "date": "2023-12-14",
       "heure": "11:33",
       "motif": "Une consultation de contrôle",
       "id": 6
+    },
+    {
+      "status": "En attente d'arrivée",
+      "patient": {
+        "id": 1,
+        "nom": "Dupont",
+        "prenom": "Jean",
+        "dateNaissance": "1980-01-15",
+        "genre": "Homme",
+        "adresse": "123 Rue de la Santé",
+        "telephone": "0123456789",
+        "CNAM": true,
+        "NumCnam": 12358
+      },
+      "date": "2023-12-14",
+      "heure": "15:28",
+      "motif": "Une consultation de contrôle",
+      "id": 7
     }
   ],
   "dossierMedical": [
