@@ -24,11 +24,21 @@
                                     <input type="text" class="form-control" id="titre" name="titre"
                                         placeholder="Enter Titre de traitement" required #nomTrait="ngModel"
                                         [(ngModel)]="treatement.titre">
+                                        <div class="text-danger mt-2" *ngIf="nomTrait.invalid && nomTrait.touched">
+                                            <div *ngIf="nomTrait.errors?.['required']" class="mt-2">Le champ titre traitement est obligatoire
+                                            </div>
+        
+                                        </div>
                                 </div>
                                 <div class="mb-3 col-md-12">
                                     <label class="form-label">Durée Traitement</label>
                                     <input type="text" class="form-control" placeholder="Enter Durée de traitement"
                                         [(ngModel)]="treatement.durre" #durre="ngModel" name="durre" required>
+                                        <div class="text-danger mt-2" *ngIf="durre.invalid && durre.touched">
+                                            <div *ngIf="durre.errors?.['required']" class="mt-2">Le champ durre traitement est obligatoire
+                                            </div>
+        
+                                        </div>
                                 </div>
                                 <!-- input -->
 

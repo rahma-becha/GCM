@@ -58,8 +58,8 @@
                                 <div class="text-danger mt-2" *ngIf="telephone.invalid && telephone.touched">
                                     <div *ngIf="telephone.errors?.['required']" class="mt-2">Le champ telephone est
                                         obligatoire</div>
-                                    <div *ngIf="telephone.errors?.['pattern']" class="mt-2">Le champ telephone doit avoir 8 chiffres </div>
-
+                             <!--       <div *ngIf="telephone.errors?.['pattern']" class="mt-2">Le champ telephone doit avoir 8 chiffres </div>
+-->
                                 </div>
                             </div>
                             <div class="col-md-6 d-md-flex mt-3">
@@ -87,7 +87,7 @@
                             <div class="col-md-12" *ngIf="patient.CNAM==true">
                                 <label for="NumCnam" class="form-label">Numéro CNAM</label>
                                 <input type="text" class="form-control" id="NumCnam" name="NumCnam"
-                                    placeholder="NumCnam" #NumCnam="ngModel" [(ngModel)]="patient.NumCnam" >
+                                    placeholder="NumCnam"  [(ngModel)]="patient.NumCnam" >
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
